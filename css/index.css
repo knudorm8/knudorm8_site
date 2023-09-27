@@ -1,0 +1,27 @@
+@import "colors-dark.css";
+@import "article.css";
+@import "navigation-header.css";
+@import "content.css";
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: auto;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Montserrat, sans-serif;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: white;
+}
+
+

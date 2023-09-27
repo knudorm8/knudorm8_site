@@ -1,0 +1,19 @@
+.article-div {
+  width: 40%;
+  margin: auto;
+  text-align: justify;
+  font-size: 18px;
+}
+
+.article-img-div {
+  width: 100%;
+  margin: auto;
+  padding: 24px;
+}
+
+.article-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 10px black;
+}
+
