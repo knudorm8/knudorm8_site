@@ -1,0 +1,18 @@
+@media (prefers-color-scheme:dark) {
+  :root{
+    --background-color: #0f0f0f;
+    --navigation-hover-color: #252525;
+    --text-color: white;
+    --link-color: white;
+    --shadow-color: black;
+  }
+}
+@media (prefers-color-scheme:light) {
+  :root{
+    --background-color: #f0f0f0;
+    --navigation-hover-color: #d9d9d9;
+    --text-color: black;
+    --link-color: black;
+    --shadow-color: black;
+  }
+}
