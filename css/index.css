@@ -1,7 +1,7 @@
-@import "colors-dark.css";
 @import "article.css";
 @import "navigation-header.css";
 @import "content.css";
+@import "colors.css";
 
 html {
   height: 100%;
@@ -14,10 +14,6 @@ body {
   color: var(--text-color);
   font-family: Montserrat, sans-serif;
   height: 100%;
-}
-
-h1 {
-  text-align: center;
 }
 
 a {
