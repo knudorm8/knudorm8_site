@@ -1,4 +1,3 @@
-@import "article.css";
 @import "navigation-header.css";
 @import "content.css";
 @import "colors.css";
@@ -8,16 +7,30 @@ html {
   width: 100%;
 }
 
+* {
+  font-family: Montserrat, sans-serif;
+}
+
 body {
   margin: auto;
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: Montserrat, sans-serif;
   height: 100%;
 }
 
-a {
-  color: white;
+h1 {
+  font-weight: 700;
 }
 
+h2 {
+  font-weight: 650;
+}
+
+a {
+  color: var(--text-color);
+}
+
+.fen-clickable {
+  cursor: pointer;
+}
 

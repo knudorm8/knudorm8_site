@@ -1,121 +1,41 @@
-@import "colors-dark.css";
-
 :root {
-  --navbar-full-hght: 8%;
+  --navbar-full-hght: 74px;
 }
 
 #logo-text {
-  display: inline;
-  fill: var(--background-color);
+  fill: var(--text-color); !important;
 }
 
-.shadow-div {
-  z-index: -1;
-  position: fixed;
-  top: 0;
+.navbar {
   height: var(--navbar-full-hght);
-  width: 100%;
-  background-color: var(--background-color);
+  padding: 0 74px;
   box-shadow: 0 0 10px var(--shadow-color);
-}
-
-.navigation-header {
-  margin-left: 40px;
-  margin-right: 40px;
-  z-index: 1000;
-  position: sticky;
-  top: 0;
-  height: var(--navbar-full-hght);
-  /*overflow: hidden;*/
-  background-color: var(--background-color);
-  box-shadow: var(--shadow-color);
-  color: white;
-}
-
-.navigation-header div,
-.navigation-header .div-right,
-.navigation-header a,
-.navigation-header .a-right {
-  /*positioning and sizing*/
-  float: left;
-  align-items: center;
-  height: 100%;
-  width: min-content;
-
-  /*text formatting*/
-  font-size: 20px;
-  line-height: 0.9;
   font-weight: 600;
-  text-decoration: none;
-
-  /*effects*/
-  transition: background-color 0.4s;
-  cursor: default;
 }
 
-.navigation-header div {
+.nav-item, .nav-link {
   height: 100%;
 }
 
-.navigation-header .a-right {
-  height: 100%;
-  cursor: pointer;
-}
-
-.navigation-header .navigation-element, .a-right {
-  display: flex;
-  align-items: center;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.navigation-header .navigation-element:hover {
+.nav-item:hover {
   background-color: var(--navigation-hover-color);
 }
 
-.navigation-header div {
-  min-width: 210px;
+a:hover{
+  color: var(--text-color);
 }
 
-
-.navigation-header .div-right,
-.navigation-header .a-right {
-  float: right;
-}
-
-
-.navigation-header div .dropdown-menu {
-  position: relative;
-  float: left;
-  padding: 0;
-  z-index: 1;
+.dropdown-menu {
+  color: var(--text-color);
   background-color: var(--background-color);
-  display: none;
-  overflow: visible;
 }
 
-.dropdown-menu a {
-  float: none;
-  padding: 14px 16px;
-  background-color: var(--background-color);
+.dropdown-item {
+  color: var(--text-color);
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  color: var(--text-color);
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  text-align: left;
-  width: 100%;
-  cursor: pointer;
-}
-
-.navigation-header div:hover .dropdown-menu {
-  display: block;
-}
-
-.navigation-header div:hover,
-.navigation-header a:hover {
   background-color: var(--navigation-hover-color);
-  overflow: visible;
-}
-
-.dropdown-name {
-  float: left;
 }

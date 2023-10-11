@@ -5,6 +5,7 @@
     --text-color: white;
     --link-color: white;
     --shadow-color: black;
+    --separator-color: #222222;
   }
 }
 @media (prefers-color-scheme:light) {
@@ -13,6 +14,7 @@
     --navigation-hover-color: #d9d9d9;
     --text-color: black;
     --link-color: black;
-    --shadow-color: black;
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    --separator-color: #d7d7d7;
   }
 }

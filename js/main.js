@@ -1,21 +1,64 @@
-function to_top(){
-  document.getElementById("article").scrollTo(0,0);
+function to_top() {
+  document.getElementById("article").scrollTo(0, 0);
 }
 
-function scroll_to(header){
+function scroll_to(header) {
   document.getElementById(header).scrollIntoView();
 }
 
-function open_article(article_name) {
-  const xhr = new XMLHttpRequest();
-  const  container = document.getElementById('article');
+function loadContent(articleName) {
+  const articleElement = document.getElementById("article");
+  const articlePath = "articles/" + articleName + ".html";
+  articleElement.innerHTML = ""; // Clear the current content (if any)
+  // Load content from articleName using fetch and insert it into the article element
+  fetch(articlePath)
+    .then(response => response.text())
+    .then(data => {
+      articleElement.innerHTML = data;
+      create_contents();
+    })
+    .catch(error => {
+      console.error("Error loading content:", error);
+    });
+}
 
-  xhr.onload = function () {
-    if(this.status === 200){
-      container.innerHTML = xhr.responseText;
-    }
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Function to get the article name from the URL hash fragment
+  function getArticleNameFromHash() {
+    return window.location.hash.slice(1); // Remove the leading '#'
   }
 
-  xhr.open('get', article_name);
-  xhr.send();
+  // Load content based on the URL hash fragment
+  function handleHashChange() {
+    const articleName = getArticleNameFromHash();
+    if(articleName.length === 0) return;
+    loadContent(articleName);
+  }
+
+  // Initial content loading based on the hash fragment
+  handleHashChange();
+
+  // Handle hash changes (e.g., when the user clicks on links)
+  window.addEventListener("hashchange", handleHashChange);
+});
+
+function create_contents() {
+  // Get all elements with class "sample" and retrieve their text content
+  const name = document.querySelector("#article h1");
+  const headers = document.querySelectorAll("#article h2");
+  let contents_element = document.getElementById("article-contents");
+  let contents_text = '';
+  contents_element.innerHTML = '';
+
+  contents_text += "<h1>" + name.textContent + "</h1>";
+  contents_text += "<ul>";
+  let i = 1;
+  headers.forEach(function (header) {
+    header.id="article-header-" + i;
+    contents_text += "<li onclick='scroll_to(\"article-header-" + i + "\")'>" + header.textContent + "</li>";
+    i++;
+  });
+  contents_text += "</ul>";
+  contents_element.innerHTML = contents_text;
 }

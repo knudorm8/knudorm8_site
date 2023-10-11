@@ -4,3 +4,6 @@
 node_modules
 dist
 .cache
+/articles/about-us.html
+/Макети
+/.idea/vcs.xml

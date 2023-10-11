@@ -5,8 +5,8 @@ main {
   display: flex;
   justify-content: stretch;
   overflow: hidden;
-  border-right: 1px solid #222222;
-  border-left: 1px solid #222222;
+  border-right: 1px solid var(--separator-color);
+  border-left: 1px solid var(--separator-color);
 }
 
 main article, main .side-panel {
@@ -14,7 +14,7 @@ main article, main .side-panel {
 }
 
 main article {
-  border-right: 1px solid #222222;
+  border-right: 1px solid var(--separator-color);
   overflow: scroll;
   padding-right: 120px;
   padding-left: 120px;
@@ -29,6 +29,11 @@ main article {
 main article h1 {
   font-size: 40px;
   text-transform: uppercase;
+}
+
+main article h2 {
+  margin-top: 2em;
+  margin-bottom: 0.6em;
 }
 
 main article ul,
@@ -48,9 +53,25 @@ main .side-panel {
 }
 
 .contents {
-  width: min-content;
-  text-wrap: normal;
   flex-grow: 1;
+  text-wrap: normal;
+  font-size: 16px;
+}
+
+.contents h1 {
+  font-size: 20px;
+  margin-bottom: 2em;
+}
+
+.contents li {
+  margin-bottom: 1em;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition-duration: 0.4s;
+}
+
+.contents li:hover {
+  text-decoration-color: var(--text-color);
 }
 
 main .side-panel .contents li {
@@ -62,12 +83,14 @@ main .side-panel .button {
   align-items: center;
   text-align: center;
   padding: 10px 20px;
-  border: white solid 1px;
+  border: var(--text-color) solid 1px;
   border-radius: 100px;
   font-weight: bold;
   width: min-content;
+  transition-duration: 0.4s;
 }
 
 .button:hover{
   cursor: pointer;
+  background-color: var(--navigation-hover-color);
 }
