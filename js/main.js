@@ -13,7 +13,7 @@ function loadContent(articleName) {
   // Load content from articleName using fetch and insert it into the article element
   fetch(articlePath)
     .then(response => {
-      if(response.status === 404) {
+      if (response.status === 404) {
         return "<h1>Сторінки не існує</h1>" +
           "Нам дуже, дуже шкода 😔";
       }
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load content based on the URL hash fragment
   function handleHashChange() {
     const articleName = getArticleNameFromHash();
-    if(articleName.length === 0) return;
+    if (articleName.length === 0) return;
     loadContent(articleName);
   }
 
@@ -61,10 +61,20 @@ function create_contents() {
   contents_text += "<ul>";
   let i = 1;
   headers.forEach(function (header) {
-    header.id="article-header-" + i;
+    header.id = "article-header-" + i;
     contents_text += "<li onclick='scroll_to(\"article-header-" + i + "\")'>" + header.textContent + "</li>";
     i++;
   });
   contents_text += "</ul>";
   contents_element.innerHTML = contents_text;
+}
+
+function toggle_contents(){
+  if (window.innerWidth > 1210) return false;
+  if (document.getElementById('article-contents').style.left === "-200%" || document.getElementById('article-contents').style.left === '') {
+    document.getElementById('article-contents').style.left = "0";
+  }
+  else {
+    document.getElementById('article-contents').style.left = "-200%";
+  }
 }

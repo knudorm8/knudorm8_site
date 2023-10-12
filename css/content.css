@@ -1,4 +1,5 @@
 main {
+  position: relative;
   margin: 0 74px;
   height: calc(100% - var(--navbar-full-hght));
   display: flex;
@@ -13,7 +14,6 @@ main article, main .side-panel {
 }
 
 main article {
-  border-right: 1px solid var(--separator-color);
   overflow: scroll;
   padding-right: 120px;
   padding-left: 120px;
@@ -47,6 +47,8 @@ main article li {
 }
 
 main .side-panel {
+  z-index: 99;
+  border-left: 1px solid var(--separator-color);
   min-width: 30%;
   display: flex;
   flex-direction: column;
@@ -54,9 +56,12 @@ main .side-panel {
   overflow-y: scroll;
   padding-right: 40px;
   padding-left: 40px;
+  /*transition: left 0.4s;*/
+  transition-duration: 0.4s;
 }
 
 .contents {
+  overflow-x: hidden;
   flex-grow: 1;
   text-wrap: normal;
   font-size: 0.9vw;
@@ -78,11 +83,15 @@ main .side-panel {
   text-decoration-color: var(--text-color);
 }
 
-main .side-panel .contents li {
+.contents li {
   cursor: pointer;
 }
 
-main .side-panel .button {
+.button {
+  position: absolute;
+  top:92%;
+  left: 71%;
+  z-index: 100;
   display: flex;
   align-items: center;
   text-align: center;
@@ -91,12 +100,17 @@ main .side-panel .button {
   border-radius: 100px;
   font-weight: bold;
   width: min-content;
+  background-color: var(--background-color);
   transition: background-color 0.4s;
 }
 
 .button:hover{
   cursor: pointer;
   background-color: var(--navigation-hover-color);
+}
+
+#contents-toggler {
+  display: none;
 }
 
 @media only screen and (max-width:1700px) {
@@ -110,7 +124,17 @@ main .side-panel .button {
 
 @media only screen and (max-width:1210px) {
   main .side-panel {
-    display: none;
+    position: absolute;
+    border-left: none;
+    /*background-color: var(--background-color);*/
+    backdrop-filter: blur(30px);
+    height: 100vh;
+    width: 40%;
+    display: flex;
+    padding: 20px;
+  }
+  main .side-panel h1 {
+    font-size: 20px;
   }
   main {
     border-left: none;
@@ -119,15 +143,28 @@ main .side-panel .button {
   }
   main article {
     border-right: none;
+    padding-bottom: 50px;
+  }
+  .button {
+    left: 20px;
+  }
+  #article-contents {
+    left: -200%;
+  }
+  #contents-toggler {
+    display: flex;
   }
 }
 
 @media only screen and (max-width:800px) {
   main {
-    margin: 0 60px;
+    margin: 0;
   }
   main article {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+  main .side-panel {
+    width: 100%;
   }
 }
