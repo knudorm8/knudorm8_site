@@ -1,4 +1,3 @@
-
 main {
   margin: 0 74px;
   height: calc(100% - var(--navbar-full-hght));
@@ -21,7 +20,7 @@ main article {
   min-width: 70%;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  font-size: 20px;
+  font-size: 1vw;
   text-align: justify;
   line-height: 2em;
 }
@@ -31,7 +30,7 @@ main article a {
 }
 
 main article h1 {
-  font-size: 40px;
+  font-size: 2vw;
   text-transform: uppercase;
   text-align: left;
 }
@@ -60,11 +59,11 @@ main .side-panel {
 .contents {
   flex-grow: 1;
   text-wrap: normal;
-  font-size: 16px;
+  font-size: 0.9vw;
 }
 
 .contents h1 {
-  font-size: 20px;
+  font-size: 1.4vw;
   margin-bottom: 2em;
 }
 
@@ -72,7 +71,7 @@ main .side-panel {
   margin-bottom: 1em;
   text-decoration: underline;
   text-decoration-color: transparent;
-  transition-duration: 0.4s;
+  transition: text-decoration-color 0.4s;
 }
 
 .contents li:hover {
@@ -92,10 +91,43 @@ main .side-panel .button {
   border-radius: 100px;
   font-weight: bold;
   width: min-content;
-  transition-duration: 0.4s;
+  transition: background-color 0.4s;
 }
 
 .button:hover{
   cursor: pointer;
   background-color: var(--navigation-hover-color);
+}
+
+@media only screen and (max-width:1700px) {
+  main article, .contents, h2 {
+    font-size: 16px;
+  }
+  main article h1 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width:1210px) {
+  main .side-panel {
+    display: none;
+  }
+  main {
+    border-left: none;
+    border-right: none;
+    margin: 0 1%;
+  }
+  main article {
+    border-right: none;
+  }
+}
+
+@media only screen and (max-width:800px) {
+  main {
+    margin: 0 60px;
+  }
+  main article {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
