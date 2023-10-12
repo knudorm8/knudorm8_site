@@ -12,7 +12,13 @@ function loadContent(articleName) {
   articleElement.innerHTML = ""; // Clear the current content (if any)
   // Load content from articleName using fetch and insert it into the article element
   fetch(articlePath)
-    .then(response => response.text())
+    .then(response => {
+      if(response.status === 404) {
+        return "<h1>Сторінки не існує</h1>" +
+          "Нам дуже, дуже шкода 😔";
+      }
+      return response.text();
+    })
     .then(data => {
       articleElement.innerHTML = data;
       create_contents();
