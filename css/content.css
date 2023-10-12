@@ -26,9 +26,14 @@ main article {
   line-height: 2em;
 }
 
+main article a {
+  text-decoration: underline;
+}
+
 main article h1 {
   font-size: 40px;
   text-transform: uppercase;
+  text-align: left;
 }
 
 main article h2 {
