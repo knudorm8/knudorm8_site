@@ -9,7 +9,8 @@ main {
   border-left: 1px solid var(--separator-color);
 }
 
-main article, main .side-panel {
+main article,
+main .side-panel {
   padding: 20px 0;
 }
 
@@ -89,7 +90,7 @@ main .side-panel {
 
 .button {
   position: absolute;
-  top:92%;
+  top: 92%;
   left: 71%;
   z-index: 100;
   display: flex;
@@ -104,7 +105,7 @@ main .side-panel {
   transition: background-color 0.4s;
 }
 
-.button:hover{
+.button:hover {
   cursor: pointer;
   background-color: var(--navigation-hover-color);
 }
@@ -113,8 +114,10 @@ main .side-panel {
   display: none;
 }
 
-@media only screen and (max-width:1700px) {
-  main article, .contents, h2 {
+@media only screen and (max-width: 1700px) {
+  main article,
+  .contents,
+  h2 {
     font-size: 16px;
   }
   main article h1 {
@@ -122,7 +125,7 @@ main .side-panel {
   }
 }
 
-@media only screen and (max-width:1210px) {
+@media only screen and (max-width: 1210px) {
   main .side-panel {
     position: absolute;
     border-left: none;
@@ -156,7 +159,7 @@ main .side-panel {
   }
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width: 800px) {
   main {
     margin: 0;
   }
