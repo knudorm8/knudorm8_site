@@ -1,7 +1,3 @@
-function to_top() {
-  document.getElementById("article").scrollTo(0, 0);
-}
-
 function scroll_to(header) {
   document.getElementById(header).scrollIntoView();
 }
@@ -14,8 +10,7 @@ function loadContent(articleName) {
   fetch(articlePath)
     .then(response => {
       if (response.status === 404) {
-        return "<h1>Сторінки не існує</h1>" +
-          "Нам дуже, дуже шкода 😔";
+        return "<h1>Сторінки не існує</h1>" + "Нам дуже, дуже шкода 😔";
       }
       return response.text();
     })
@@ -69,12 +64,11 @@ function create_contents() {
   contents_element.innerHTML = contents_text;
 }
 
-function toggle_contents(){
+function toggle_contents() {
   if (window.innerWidth > 1210) return false;
   if (document.getElementById('article-contents').style.left === "-200%" || document.getElementById('article-contents').style.left === '') {
     document.getElementById('article-contents').style.left = "0";
-  }
-  else {
+  } else {
     document.getElementById('article-contents').style.left = "-200%";
   }
 }
