@@ -4,6 +4,7 @@ function to_top() {
 
 function scroll_to(header) {
   document.getElementById(header).scrollIntoView();
+  toggle_contents();
 }
 
 function loadContent(articleName) {
