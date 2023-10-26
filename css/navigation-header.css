@@ -1,50 +1,9 @@
 :root {
-  --navbar-full-hght: 74px;
+  --navPanel-height: 74px;
 }
 
-#logo-text {
-  fill: var(--text-color); !important;
-}
-
-.navbar {
-  height: var(--navbar-full-hght);
-  padding: 0 74px;
-  box-shadow: 0 0 10px var(--shadow-color);
-  font-weight: 600;
-}
-
-.navbar-nav {
-  padding: 0;
-  height: 100%;
-
-}
-
-.nav-item, .nav-link {
-  display: flex;
-  align-items: center;
-  text-align: left;
-  line-height: 0.9em;
-}
-
-.nav-item:hover, .nav-item:focus{
-  background-color: var(--navigation-hover-color);
-}
-
-a:hover{
-  color: var(--text-color);
-}
-
-.dropdown-menu {
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
-.dropdown-item {
-  color: var(--text-color);
-}
-
-.dropdown-item:focus, .dropdown-item:hover {
-  color: var(--text-color);
-  text-decoration: none;
-  background-color: var(--navigation-hover-color);
+.navigationPanel {
+  height: var(--navPanel-height);
+  border-bottom: 1px solid var(--separator-color);
+  z-index: 100;
 }
