@@ -66,6 +66,7 @@ main .side-panel {
   flex-grow: 1;
   text-wrap: normal;
   font-size: 0.9vw;
+  user-select: none;
 }
 
 .contents h1 {
@@ -103,6 +104,7 @@ main .side-panel {
   width: min-content;
   background-color: var(--background-color);
   transition: background-color 0.4s;
+  user-select: none;
 }
 
 .button:hover {
@@ -114,12 +116,15 @@ main .side-panel {
   display: none;
 }
 
+
+/*TODO split into responsive.css*/
 @media only screen and (max-width: 1700px) {
   main article,
   .contents,
   h2 {
     font-size: 16px;
   }
+
   main article h1 {
     font-size: 20px;
   }
@@ -136,24 +141,30 @@ main .side-panel {
     display: flex;
     padding: 20px;
   }
+
   main .side-panel h1 {
     font-size: 20px;
   }
+
   main {
     border-left: none;
     border-right: none;
     margin: 0 1%;
   }
+
   main article {
     border-right: none;
     padding-bottom: 50px;
   }
+
   .button {
     left: 20px;
   }
+
   #article-contents {
     left: -200%;
   }
+
   #contents-toggler {
     display: flex;
   }
@@ -163,10 +174,12 @@ main .side-panel {
   main {
     margin: 0;
   }
+
   main article {
     padding-right: 35px;
     padding-left: 35px;
   }
+
   main .side-panel {
     width: 100%;
   }
