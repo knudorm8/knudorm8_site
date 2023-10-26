@@ -1,0 +1,33 @@
+.mcc_article {
+  overflow-y: scroll;
+  padding: 20px 24px 80px;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+.mcc_article h1,
+.mcc_article_header {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.mcc_article h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.mcc_article p {
+  margin-bottom: 10px;
+}
+
+.mcc_article a {
+  color: var(--link-color);
+}
+
+.mcc_article ul {
+  padding-left: 20px;
+}
+
+.mcc_article li {
+  margin-bottom: 10px;
+}
