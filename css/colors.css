@@ -2,10 +2,11 @@
   :root {
     --background-color: #0f0f0f;
     --navigation-hover-color: #252525;
-    --text-color: white;
+    --text-color: #eaeaea;
     --link-color: white;
     --shadow-color: black;
     --separator-color: #222222;
+    --scrollbar-trackHover-color: #2c2c2c;
   }
 }
 
@@ -17,5 +18,6 @@
     --link-color: black;
     --shadow-color: rgba(0, 0, 0, 0.25);
     --separator-color: #d7d7d7;
+    --scrollbar-trackHover-color: #e1e1e1;
   }
 }
