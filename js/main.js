@@ -1,5 +1,6 @@
 function scroll_to(header) {
   document.getElementById(header).scrollIntoView();
+  toggle_contents();
 }
 
 function loadContent(articleName) {
@@ -48,12 +49,12 @@ function create_contents() {
   // Get all elements with class "sample" and retrieve their text content
   const name = document.querySelector("#article h1");
   const headers = document.querySelectorAll("#article h2");
-  let contents_element = document.getElementById("article-contents");
+  let contents_element = document.getElementById("contentsPanel");
   let contents_text = '';
   contents_element.innerHTML = '';
 
-  contents_text += "<h1>" + name.textContent + "</h1>";
-  contents_text += "<ul>";
+  contents_text += "<h1 class='mcc_article_header'>" + name.textContent + "</h1>";
+  contents_text += "<ul class='list'>";
   let i = 1;
   headers.forEach(function (header) {
     header.id = "article-header-" + i;
@@ -66,9 +67,9 @@ function create_contents() {
 
 function toggle_contents() {
   if (window.innerWidth > 1210) return false;
-  if (document.getElementById('article-contents').style.left === "-200%" || document.getElementById('article-contents').style.left === '') {
-    document.getElementById('article-contents').style.left = "0";
+  if (document.getElementById('contentsPanel').style.left === "-200%" || document.getElementById('contentsPanel').style.left === '') {
+    document.getElementById('contentsPanel').style.left = "0";
   } else {
-    document.getElementById('article-contents').style.left = "-200%";
+    document.getElementById('contentsPanel').style.left = "-200%";
   }
 }
