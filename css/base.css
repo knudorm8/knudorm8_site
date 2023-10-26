@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@700&family=Lato&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.mainContentContainer {
+  display: flex;
+  height: calc(100% - var(--navPanel-height));
+  flex-direction: column;
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.list {
+  padding-left: 20px;
+}
+
+.list li {
+  margin-bottom: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  border-radius: 100px;
+  padding: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track:hover {
+  background: var(--scrollbar-trackHover-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #929292;
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color);
+}
+
+::selection {
+  background: #cc0001;
+}
