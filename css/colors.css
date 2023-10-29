@@ -6,6 +6,7 @@
     --link-color: white;
     --shadow-color: black;
     --separator-color: #222222;
+    --scrollbar-thumb-color: rgba(255, 255, 255, 40%);
     --scrollbar-trackHover-color: #2c2c2c;
   }
 }
