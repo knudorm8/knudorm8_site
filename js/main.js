@@ -1,3 +1,7 @@
+function to_top() {
+  document.getElementById("article").scrollTo(0, 0);
+}
+
 function scroll_to(header) {
     document.getElementById(header).scrollIntoView();
     toggle_contents();
