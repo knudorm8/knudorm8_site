@@ -66,7 +66,7 @@ function create_contents() {
 }
 
 function toggle_contents() {
-    if (window.innerWidth > 1210) return false;
+    if (window.innerWidth > 1600) return false;
     if (document.getElementById('contentsPanel').style.left === "-200%" || document.getElementById('contentsPanel').style.left === '') {
         document.getElementById('contentsPanel').style.left = "0";
     } else {

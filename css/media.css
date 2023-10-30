@@ -30,4 +30,8 @@
     box-shadow: none;
     border-left: 1px solid var(--separator-color);
   }
+
+  .mcc_contentsPanelToggle {
+    display: none;
+  }
 }
