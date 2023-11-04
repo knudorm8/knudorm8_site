@@ -1,8 +1,10 @@
 .mcc_contentsPanel {
+  --contentsPanel-width: 100%;
   position: absolute;
-  left: -200%;
+  z-index: 9;
+  left: -100%;
   height: calc(100% - var(--navPanel-height));
-  width: 100%;
+  width: var(--contentsPanel-width);
   padding: 40px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -10,7 +12,7 @@
   user-select: none;
   overflow-y: scroll;
   backdrop-filter: blur(13px);
-  z-index: 9;
+  background: var(--contentsPanel-backgroundColor);
   transition: left 0.2s;
 }
 
