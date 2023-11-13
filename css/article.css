@@ -1,8 +1,26 @@
 .mcc_article {
+  display: flex;
+  flex-direction: column;
   overflow-y: scroll;
   padding: 20px 24px 80px;
   scroll-behavior: smooth;
   line-height: 1.5;
+
+  & h2, & p, & li {
+    margin-bottom: 10px;
+  }
+
+  & h2 {
+    margin-top: 30px;
+  }
+
+  & a {
+    color: var(--link-color);
+  }
+
+  & ul {
+    padding-left: 20px;
+  }
 }
 
 .mcc_article h1,
@@ -11,23 +29,10 @@
   margin-bottom: 20px;
 }
 
-.mcc_article h2 {
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-.mcc_article p {
-  margin-bottom: 10px;
-}
-
-.mcc_article a {
-  color: var(--link-color);
-}
-
-.mcc_article ul {
-  padding-left: 20px;
-}
-
-.mcc_article li {
-  margin-bottom: 10px;
+.imageTitle {
+  width: 60%;
+  align-self: center;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  box-shadow: 0 0 10px var(--shadow-color);
 }
