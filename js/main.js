@@ -1,9 +1,4 @@
-function scroll_to(header) {
-  document.getElementById(header).scrollIntoView();
-  toggle_contents();
-}
-
-function loadContent(articleName) {
+function loadArticle(articleName) {
   const articleElement = document.getElementById("article");
   const articlePath = "articles/" + articleName + ".html";
   articleElement.innerHTML = ""; // Clear the current content (if any)
@@ -17,7 +12,7 @@ function loadContent(articleName) {
     })
     .then(data => {
       articleElement.innerHTML = data;
-      create_contents();
+      populate_contents();
     })
     .catch(error => {
       console.error("Error loading content:", error);
@@ -34,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load content based on the URL hash fragment
   function handleHashChange() {
     const articleName = getArticleNameFromHash();
-    if (articleName.length === 0) return;
-    loadContent(articleName);
+    if (articleName.length === 0) loadArticle("guide");
+    loadArticle(articleName);
   }
 
   // Initial content loading based on the hash fragment
@@ -45,46 +40,54 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("hashchange", handleHashChange);
 });
 
-function create_contents() {
+let contentsPanel = document.getElementById('contentsPanel');
+
+function populate_contents() {
   // Get all elements with class "sample" and retrieve their text content
   const name = document.querySelector("#article h1");
   const headers = document.querySelectorAll("#article h2");
-  let contents_element = document.getElementById("contentsPanel");
-  let contents_text = '';
-  contents_element.innerHTML = '';
+  let contentsHTML = '';
+  contentsPanel.innerHTML = '';
 
-  contents_text += "<h1 class='mcc_article_header'>" + name.textContent + "</h1>";
-  contents_text += "<ul class='list'>";
+  contentsHTML += "<h1 class='mcc_article_header'>" + name.textContent + "</h1>";
+  contentsHTML += "<ul class='list'>";
   let i = 1;
   headers.forEach(function (header) {
     header.id = "article-header-" + i;
-    contents_text += "<li onclick='scroll_to(\"article-header-" + i + "\")'>" + header.textContent + "</li>";
+    contentsHTML += "<li onclick='scroll_toHeader(\"article-header-" + i + "\")'>" + header.textContent + "</li>";
     i++;
   });
-  contents_text += "</ul>";
-  contents_element.innerHTML = contents_text;
+  contentsHTML += "</ul>";
+  contentsPanel.innerHTML = contentsHTML;
 }
 
-window.onresize = function () {
-  if (window.innerWidth < 960) {
-    document.getElementById('contentsPanel').style.left = '-100%';
+function contentsPanel_position() {
+  return contentsPanel.getBoundingClientRect().left;
+}
+
+function contentsPanel_width() {
+  return contentsPanel.offsetWidth;
+}
+
+window.addEventListener("resize", function () {
+  contentsPanel.style.transition = '0s';
+  if (contentsPanel_position() < 0) {
+    contentsPanel.style.left = '-' + contentsPanel_width() + 'px'
   }
-}
+  setTimeout(() => {
+    contentsPanel.style.transition = 'left 0.2s';
+  }, 200);
+})
 
-function toggle_contents() {
-  if (window.innerWidth > 1600) return;
-
-  let contentsPanel = document.getElementById('contentsPanel');
-  let contentsPanel_width = contentsPanel.offsetWidth;
-  let contentsPanel_position = contentsPanel.getBoundingClientRect().left;
-
-  if (contentsPanel_position < 0) {
-    contentsPanel.style.left = "0";
+function toggle_contentsPanel() {
+  if (contentsPanel_position() >= 0) {
+    contentsPanel.style.left = "-" + contentsPanel_width() + "px";
   } else {
-    if (window.innerWidth < 960) {
-      contentsPanel.style.left = '-100%';
-    } else {
-      contentsPanel.style.left = '-' + contentsPanel_width + 'px';
-    }
+    contentsPanel.style.left = '0';
   }
+}
+
+function scroll_toHeader(header) {
+  document.getElementById(header).scrollIntoView();
+  toggle_contentsPanel();
 }
