@@ -5,13 +5,13 @@
     margin: 0 120px;
   }
 
-  .mcc_article {
+  .mcc__article {
     padding: 20px 20px 80px;
   }
 }
 
 @media screen and (min-width: 960px) {
-  .mcc_contentsPanel {
+  .mcc__contentsPanel {
     --contentsPanel-width: 600px;
     box-shadow: 0 0 10px var(--shadow-color);
   }
@@ -22,11 +22,11 @@
     flex-direction: row;
   }
 
-  .mcc_article {
+  .mcc__article {
     flex: 10;
   }
 
-  .mcc_contentsPanel {
+  .mcc__contentsPanel {
     position: static;
     flex: 4;
     height: 100%;
@@ -34,7 +34,7 @@
     border-left: 1px solid var(--separator-color);
   }
 
-  .mcc_contentsPanelToggle {
+  .mcc__contentsPanelToggle {
     display: none;
   }
 }

@@ -1,3 +1,8 @@
+/**
+ * loadArticle отримує на вхід назву статті і, з допомогою fetch, перевіряє наявність статті, якщо стаття існує,
+ * завантажує її і створює для неї зміст викликом populate_contents()
+ * @param articleName
+ */
 function loadArticle(articleName) {
   const articleElement = document.getElementById("article");
   const articlePath = "articles/" + articleName + ".html";
@@ -46,19 +51,27 @@ function populate_contents() {
   // Get all elements with class "sample" and retrieve their text content
   const name = document.querySelector("#article h1");
   const headers = document.querySelectorAll("#article h2");
-  let contentsHTML = '';
   contentsPanel.innerHTML = '';
 
-  contentsHTML += "<h1 class='mcc_article_header'>" + name.textContent + "</h1>";
-  contentsHTML += "<ul class='list'>";
-  let i = 1;
-  headers.forEach(function (header) {
-    header.id = "article-header-" + i;
-    contentsHTML += "<li onclick='scroll_toHeader(\"article-header-" + i + "\")'>" + header.textContent + "</li>";
-    i++;
-  });
-  contentsHTML += "</ul>";
-  contentsPanel.innerHTML = contentsHTML;
+  let articleName = document.createElement('h1');
+  articleName.textContent = name.textContent;
+  articleName.className = 'mcc__article__header'
+
+  let headerList = document.createElement('ul');
+  headerList.className = 'list list--menu';
+
+  Array.from(headers).forEach((header, i) => {
+    let headerList_item = document.createElement('li');
+    headerList_item.textContent = header.textContent;
+    header.id = `article-header-${i + 1}`;
+    headerList_item.addEventListener('click', () => {
+      scroll_toHeader(`article-header-${i + 1}`);
+    })
+    headerList.appendChild(headerList_item);
+  })
+
+  contentsPanel.appendChild(articleName);
+  contentsPanel.appendChild(headerList);
 }
 
 function contentsPanel_position() {
@@ -87,6 +100,10 @@ function toggle_contentsPanel() {
   }
 }
 
+/**
+ * scroll_toHeader отримує на вхід id заголовка, прокручує сайт до цього заголовка і, якщо це можливо, закриває панель змісту
+ * @param header
+ */
 function scroll_toHeader(header) {
   document.getElementById(header).scrollIntoView();
   toggle_contentsPanel();

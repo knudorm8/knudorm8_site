@@ -1,47 +1,49 @@
-.mcc_contentsPanel {
+/*
+* mcc__contentsPanel — елемент, що входить до mainContentContainer, тобто до елементу main з файлу index.html.
+*
+* Цей елемент містить в собі зміст поточної відкритої статті.
+*/
+
+.mcc__contentsPanel {
+  /*Змінні*/
   --contentsPanel-width: 100%;
+
+  /*Розмір*/
+  height: calc(100% - var(--navPanel-height));
+  width: var(--contentsPanel-width);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  /*Позиція*/
   position: absolute;
   z-index: 9;
   left: -100%;
-  height: calc(100% - var(--navPanel-height));
-  width: var(--contentsPanel-width);
-  padding: 40px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+
+  /*Відображення*/
+
+  /*Поведінка*/
   user-select: none;
   overflow-y: scroll;
-  backdrop-filter: blur(13px);
+
+  /*Позиціонування вмісту*/
+  padding: 40px;
+
+  /*Форматування*/
   background: var(--contentsPanel-backgroundColor);
+
+  /*Ефекти*/
+  backdrop-filter: blur(13px);
   transition: left 0.2s;
 }
 
-.mcc_contentsPanel li:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
+/**
+.mcc__contentsPanelToggle — кнопка, що перемикає видимість панелі mcc__contentsPanel
+ */
 
-.mcc_contentsPanelToggle {
+.mcc__contentsPanelToggle {
   position: absolute;
   z-index: 10;
   bottom: 20px;
   left: 20px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  padding: 10px 20px;
-  color: inherit;
-  border: var(--text-color) solid 1px;
-  border-radius: 100px;
-  font-weight: bold;
-  font-size: 18px;
-  width: min-content;
-  background-color: var(--background-color);
-  transition: background-color 0.4s;
-  user-select: none;
-}
-
-.mcc_contentsPanelToggle:hover {
-  cursor: pointer;
-  background: var(--navigation-hover-color);
 }
