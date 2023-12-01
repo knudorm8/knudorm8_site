@@ -1,12 +1,9 @@
-function to_top() {
-  document.getElementById("article").scrollTo(0, 0);
-}
-
-function scroll_to(header) {
-  document.getElementById(header).scrollIntoView();
-}
-
-function loadContent(articleName) {
+/**
+ * loadArticle отримує на вхід назву статті і, з допомогою fetch, перевіряє наявність статті, якщо стаття існує,
+ * завантажує її і створює для неї зміст викликом populate_contents()
+ * @param articleName
+ */
+function loadArticle(articleName) {
   const articleElement = document.getElementById("article");
   const articlePath = "articles/" + articleName + ".html";
   articleElement.innerHTML = ""; // Clear the current content (if any)
@@ -14,14 +11,13 @@ function loadContent(articleName) {
   fetch(articlePath)
     .then(response => {
       if (response.status === 404) {
-        return "<h1>Сторінки не існує</h1>" +
-          "Нам дуже, дуже шкода 😔";
+        return "<h1>Сторінки не існує</h1>" + "Нам дуже, дуже шкода 😔";
       }
       return response.text();
     })
     .then(data => {
       articleElement.innerHTML = data;
-      create_contents();
+      populate_contents();
     })
     .catch(error => {
       console.error("Error loading content:", error);
@@ -38,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load content based on the URL hash fragment
   function handleHashChange() {
     const articleName = getArticleNameFromHash();
-    if (articleName.length === 0) return;
-    loadContent(articleName);
+    if (articleName.length === 0) loadArticle("guide");
+    loadArticle(articleName);
   }
 
   // Initial content loading based on the hash fragment
@@ -49,32 +45,66 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("hashchange", handleHashChange);
 });
 
-function create_contents() {
+let contentsPanel = document.getElementById('contentsPanel');
+
+function populate_contents() {
   // Get all elements with class "sample" and retrieve their text content
   const name = document.querySelector("#article h1");
   const headers = document.querySelectorAll("#article h2");
-  let contents_element = document.getElementById("article-contents");
-  let contents_text = '';
-  contents_element.innerHTML = '';
+  contentsPanel.innerHTML = '';
 
-  contents_text += "<h1>" + name.textContent + "</h1>";
-  contents_text += "<ul>";
-  let i = 1;
-  headers.forEach(function (header) {
-    header.id = "article-header-" + i;
-    contents_text += "<li onclick='scroll_to(\"article-header-" + i + "\")'>" + header.textContent + "</li>";
-    i++;
-  });
-  contents_text += "</ul>";
-  contents_element.innerHTML = contents_text;
+  let articleName = document.createElement('h1');
+  articleName.textContent = name.textContent;
+  articleName.className = 'mcc__article__header'
+
+  let headerList = document.createElement('ul');
+  headerList.className = 'list list--menu';
+
+  Array.from(headers).forEach((header, i) => {
+    let headerList_item = document.createElement('li');
+    headerList_item.textContent = header.textContent;
+    header.id = `article-header-${i + 1}`;
+    headerList_item.addEventListener('click', () => {
+      scroll_toHeader(`article-header-${i + 1}`);
+    })
+    headerList.appendChild(headerList_item);
+  })
+
+  contentsPanel.appendChild(articleName);
+  contentsPanel.appendChild(headerList);
 }
 
-function toggle_contents(){
-  if (window.innerWidth > 1210) return false;
-  if (document.getElementById('article-contents').style.left === "-200%" || document.getElementById('article-contents').style.left === '') {
-    document.getElementById('article-contents').style.left = "0";
+function contentsPanel_position() {
+  return contentsPanel.getBoundingClientRect().left;
+}
+
+function contentsPanel_width() {
+  return contentsPanel.offsetWidth;
+}
+
+window.addEventListener("resize", function () {
+  contentsPanel.style.transition = '0s';
+  if (contentsPanel_position() < 0) {
+    contentsPanel.style.left = '-' + contentsPanel_width() + 'px'
   }
-  else {
-    document.getElementById('article-contents').style.left = "-200%";
+  setTimeout(() => {
+    contentsPanel.style.transition = 'left 0.2s';
+  }, 200);
+})
+
+function toggle_contentsPanel() {
+  if (contentsPanel_position() >= 0) {
+    contentsPanel.style.left = "-" + contentsPanel_width() + "px";
+  } else {
+    contentsPanel.style.left = '0';
   }
+}
+
+/**
+ * scroll_toHeader отримує на вхід id заголовка, прокручує сайт до цього заголовка і, якщо це можливо, закриває панель змісту
+ * @param header
+ */
+function scroll_toHeader(header) {
+  document.getElementById(header).scrollIntoView();
+  toggle_contentsPanel();
 }

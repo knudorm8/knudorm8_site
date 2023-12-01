@@ -1,20 +1,26 @@
-@media (prefers-color-scheme:dark) {
-  :root{
-    --background-color: #0f0f0f;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: rgba(15, 15, 15);
+    --contentsPanel-backgroundColor: rgba(15, 15, 15, 75%);
     --navigation-hover-color: #252525;
-    --text-color: white;
+    --text-color: #eaeaea;
     --link-color: white;
     --shadow-color: black;
     --separator-color: #222222;
+    --scrollbar-thumb-color: rgba(255, 255, 255, 40%);
+    --scrollbar-trackHover-color: #2c2c2c;
   }
 }
-@media (prefers-color-scheme:light) {
-  :root{
-    --background-color: #f0f0f0;
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: rgba(240, 240, 240);
+    --contentsPanel-backgroundColor: rgba(240, 240, 240, 75%);
     --navigation-hover-color: #d9d9d9;
     --text-color: black;
     --link-color: black;
     --shadow-color: rgba(0, 0, 0, 0.25);
     --separator-color: #d7d7d7;
+    --scrollbar-trackHover-color: #e1e1e1;
   }
 }
