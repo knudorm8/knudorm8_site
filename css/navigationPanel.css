@@ -2,8 +2,128 @@
   --navPanel-height: 74px;
 }
 
+#logo-text {
+  fill: var(--text-color);
+}
+
 .navigationPanel {
-  height: var(--navPanel-height);
-  border-bottom: 1px solid var(--separator-color);
+  /*Позиція*/
   z-index: 100;
+
+  /*Відображення*/
+  display: flex;
+
+  /*Позиціонування вмісту*/
+  justify-content: center;
+
+  /*Форматування*/
+  font-weight: 550;
+  background: var(--background-color);
+  border-bottom: 1px solid var(--separator-color);
+
+  /*Ефекти*/
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.navigationPanel__navigationContainer {
+  /*Розмір*/
+  height: var(--navPanel-height);
+
+  /*Відображення*/
+  display: flex;
+
+  /*Позиціонування вмісту*/
+  flex-direction: row;
+}
+
+.navigationPanel__navigationContainer__logo {
+  /*Позиція*/
+  align-self: center;
+  margin: 0 20px 0 10px;
+}
+
+.navigationPanel__navigationContainer__navigationMenu {
+  /*Розмір*/
+  flex: 1;
+
+  /*Відображення*/
+  display: none;
+
+  /*Позиціонування вмісту*/
+  flex-direction: row;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown {
+  /*Розмір*/
+  height: 100%;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+  /*Позиція*/
+  position: relative;
+
+  /*Відображення*/
+  display: flex;
+
+  /*Поведінка*/
+  user-select: none;
+
+  /*Позиціонування вмісту*/
+  align-items: center;
+  padding: 10px;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu {
+  /*Розмір*/
+  width: fit-content;
+  min-width: 250px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+  /*Позиція*/
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+
+  /*Відображення*/
+  display: none;
+
+  /*Поведінка*/
+  user-select: none;
+
+  /*Позиціонування вмісту*/
+  flex-direction: column;
+
+  /*Форматування*/
+  background: var(--background-color);
+  border: 1px solid var(--separator-color);
+  box-shadow: 0 0 10px var(--shadow-color);
+
+  & a {
+    display: none;
+    padding: 20px 10px;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  & a + a {
+    border-top: 1px solid var(--separator-color);
+  }
+
+  & a:hover {
+    background-color: var(--navigation-hover-color);
+  }
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown:hover {
+  background-color: var(--navigation-hover-color);
+
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu,
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu a {
+    display: flex;
+  }
 }
