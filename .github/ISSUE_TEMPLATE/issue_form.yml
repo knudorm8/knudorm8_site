@@ -1,0 +1,63 @@
+name: Звіт про помилку
+description: Створіть звіт про помилку
+title: "Помилка: "
+labels: ["Помилка"]
+projects: ["knudorm8/1"]
+assignees:
+  - fenimoure
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Дякуємо за Ваш звіт! Перед тим, як створювати новий звіт про помилку, будь ласка, прогляньте вже наявні.
+  - type: input
+    id: contact
+    attributes:
+      label: Контактна інформація
+      description: Як ми можемо з Вами зв'язатися, щоб отримати більше інформації?
+      placeholder: наприклад. @gurt8
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Що не так?
+      description: Також, скажіть, будь ласка, чого Ви очікували?
+      placeholder: Скажіть, що ви побачили!
+      value: "Це виглядає неправильно!"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: На якій операційній системі виникла проблема?
+      multiple: true
+      options:
+        - Android
+        - iOS/iPadOS
+        - Linux
+        - Mac OS
+        - Windows
+        - Інша, вказана в полі «Додаткова інформація»
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: У якому браузері спостерігається проблема?
+      multiple: true
+      options:
+        - Firefox
+        - Chromium (Chrome, Opera, Microsoft Edge, Brave)
+        - Safari
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Згода на обробку даних
+      description: Надсилаючи цей звіт, Ви погоджуєтеся на обробку та публікацію будь-яких даних, наданих у ньому
+      options:
+        - label: Я погоджуюся на обробку та публікацію будь-яких даних, наданих у цьому звіті
+          required: true
+  - type: input
+    id: additional
+    attributes:
+      label: Додаткова інформація
+      description: Надайте будь-яку додаткову інформацію за наявності
