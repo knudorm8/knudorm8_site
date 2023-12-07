@@ -1,7 +1,7 @@
 name: Звіт про помилку
 description: Створіть звіт про помилку
 title: "Помилка: "
-labels: ["Помилка"]
+labels: ["Проблема"]
 projects: ["knudorm8/1"]
 assignees:
   - fenimoure
@@ -23,8 +23,7 @@ body:
     attributes:
       label: Що не так?
       description: Також, скажіть, будь ласка, чого Ви очікували?
-      placeholder: Скажіть, що ви побачили!
-      value: "Це виглядає неправильно!"
+      placeholder: Це виглядає неправильно! Ось вам фото!
     validations:
       required: true
   - type: dropdown
@@ -56,8 +55,9 @@ body:
       options:
         - label: Я погоджуюся на обробку та публікацію будь-яких даних, наданих у цьому звіті
           required: true
-  - type: input
+  - type: textarea
     id: additional
     attributes:
       label: Додаткова інформація
       description: Надайте будь-яку додаткову інформацію за наявності
+      placeholder: Моя проблема виникла у браузері Firefox 120.0 (64-біт), на операційній системі Windows 15.
