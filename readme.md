@@ -16,6 +16,10 @@ This is a repository of the student council of the eighth dormitory of the Taras
   * [js/](#js)
 * [Branch structure](#branch-structure)
 * [Rules on writing CSS](#rules-on-writing-css)
+  * [Methodology](#methodology)
+  * [CSS class structure](#css-class-structure)
+  * [Mobile-first approach](#mobile-first-approach)
+  * [Responsive design](#responsive-design)
 <!-- TOC -->
 
 # Development rules
@@ -55,9 +59,10 @@ Contains CSS for the projects.
 
 | Directory | Contents                                                 |
 |-----------|----------------------------------------------------------|
-| general/  | css for the elements that are used site-wide             |
 | AVP/      | css for AVP **AND** for the articles inside of articles/ |
 | LP/       | css for LP                                               |
+
+**Files that are not sorted into directories are used site-wide.**
 
 ## img/
 
@@ -65,19 +70,20 @@ Contains images used on the site.
 
 | Directory | Contents                         |
 |-----------|----------------------------------|
-| general/  | site-wide used images            |
 | AVP/      | images for articles in articles/ |
 | LP/       | images for LP                    |
+
+**Files that are not sorted into directories are used site-wide.**
 
 ## js/
 
 Contains JavaScript for the site.
 
-| File              | Purpose                                                    |
-|-------------------|------------------------------------------------------------|
-| articles.js       | Load articles depending on the hashtag of the link         |
-| contents-panel.js | Populate/show/hide contents panel on AVP                   |
-| panels.js         | Show/hide panels                                           |
+| File              | Purpose                                            |
+|-------------------|----------------------------------------------------|
+| articles.js       | Load articles depending on the hashtag of the link |
+| contents-panel.js | Populate/show/hide contents panel on AVP           |
+| panels.js         | Show/hide panels                                   |
 
 # Branch structure
 
@@ -90,9 +96,12 @@ Contains JavaScript for the site.
 
 # Rules on writing CSS
 
+## Methodology
+
 Our site uses [BEM CSS methodology](https://getbem.com/).
 
-We have also defined CSS class structure:
+## CSS class structure
+
 1. Size
 2. Position
 3. Display
@@ -100,3 +109,16 @@ We have also defined CSS class structure:
 5. Content alignment (e.g. align-items, justify-content)
 6. Content formatting (e.g. font-weight, background, border)
 7. Effects (e.g. box-shadow)
+
+## Mobile-first approach
+
+We follow mobile-first approach, which means that we develop this site primarily for the mobile devices and then
+adapt it to larger screens.
+
+## Responsive design
+
+We put media-queries in a single 'media.css' file in the according directory.
+
+Currently, only two width points are used for responsive design:
+- 789px
+- 1366px
