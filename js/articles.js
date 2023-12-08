@@ -1,6 +1,8 @@
 /**
- * loadArticle отримує на вхід назву статті і, з допомогою fetch, перевіряє наявність статті, якщо стаття існує,
- * завантажує її і створює для неї зміст викликом populate_contents()
+ * loadArticle is used for loading article into mainContentContainer
+ *
+ * The function also checks if the article exists and populates content panel
+ *
  * @param articleName
  */
 function loadArticle(articleName) {

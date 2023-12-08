@@ -48,10 +48,6 @@ body {
   color: white;
 }
 
-/**
-mainContentContainer — загальний контейнер для всього змісту (окрім навігаційної панелі).
-На нього також можна посилатися як mcc.
- */
 .mainContentContainer {
   display: flex;
   height: calc(100% - var(--navPanel-height));
