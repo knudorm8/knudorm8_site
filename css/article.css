@@ -12,10 +12,14 @@
 
   /*Позиціонування вмісту*/
   flex-direction: column;
-  padding: 20px 24px 80px;
+  padding: 20px 48px 80px;
 
   /*Форматування*/
   line-height: 1.5;
+
+  & h1 {
+    line-height: 0.9;
+  }
 
   & h2, & p, & li {
     margin-bottom: 10px;
@@ -23,6 +27,11 @@
 
   & h2 {
     margin-top: 30px;
+  }
+
+  & h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   & a {
