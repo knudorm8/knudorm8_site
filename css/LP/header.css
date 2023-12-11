@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__contentContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__textContainer {
+  margin-top: -36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.header__textContainer__logo {
+  width: 120px;
+  height: 31px;
+}
+
+.header__textContainer__h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+}
+
+.header__textContainer__p {
+  text-align: center;
+  font-style: normal;
+  font-size: var(--font-size-normal-text);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.header__buttonContainer {
+  padding-top: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 18px;
+}
+
+.header__buttonContainer__button {
+  width: 185px;
+  height: 48px;
+  padding: 0;
+  justify-content: center;
+  font-size: var(--font-size-normal-text);
+}
+
+.header__buttonContainer__button--accented-pinkBgGradient {
+  background: linear-gradient(94.87deg, #AC2035 -3.72%, #BF40A6 113%);
+  border: var(--bg-color-black) solid 1px;
+}
+
+.header__buttonContainer__button--accented-pinkBgGradient:hover {
+  background: linear-gradient(94.87deg, #AC2035 -3.72%, #BF40A6 113%);
+  color: red;
+}
+
+.header__buttonContainer__button:hover {
+  color: red;
+}
+
+.header__buttonContainer__button--border-white {
+  border: var(--text-color-white) solid 2px;
+}
+
+.header__buttonContainer__p {
+  font-size: var(--font-size-normal-text);
+  font-weight: var(--font-weight-bold);
+}
