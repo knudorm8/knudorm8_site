@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 
 :root {
   --bg-color-black: #000000;
@@ -7,9 +8,15 @@
   --font-weight-semi-bold: 600;
   --font-weight-regular: 400;
   --font-family-text: 'Montserrat', sans-serif;
-  --font-size-h1: 40px;
+  --font-family-logo-text: 'Inter', sans-serif;
+  /*Переписати відповідно до оновленого дизайну*/
+  --font-size-h1-computer: 134px;
+  --font-size-h1-tablet: 60px;
+  --font-size-h1-mobile: 40px;
+  --font-size-h2-computer: 49px;
   --font-size-h2: 32px;
   --font-size-h3: 24px;
+  --font-size-p-computer: 43px;
   --font-size-large-text: 20px;
   --font-size-normal-text: 16px;
 }
@@ -26,12 +33,9 @@ body {
   background-color: var(--bg-color-black);
 }
 
-a,
-a:link,
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 75px;
 }
