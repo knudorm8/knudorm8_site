@@ -1,14 +1,13 @@
 let contentsPanel = document.getElementById('contentsPanel');
 
 function populate_contents() {
-  // Get all elements with class "sample" and retrieve their text content
-  const name = document.querySelector("#article h1");
-  const headers = document.querySelectorAll("#article h2");
+  const title = document.querySelector("#article h1"); // Get article title
+  const headers = document.querySelectorAll("#article h2"); // Get all article headers
   contentsPanel.innerHTML = '';
 
-  let articleName = document.createElement('h1');
-  articleName.textContent = name.textContent;
-  articleName.className = 'mcc__article__header'
+  let articleTitle = document.createElement('h1');
+  articleTitle.textContent = title.textContent;
+  articleTitle.className = 'mcc__article__header'
 
   let headerList = document.createElement('ul');
   headerList.className = 'list list--menu';
@@ -23,11 +22,11 @@ function populate_contents() {
     headerList.appendChild(headerList_item);
   })
 
-  contentsPanel.appendChild(articleName);
+  contentsPanel.appendChild(articleTitle);
   contentsPanel.appendChild(headerList);
 }
 
-
+// auto-hide panel on window resize
 window.addEventListener("resize", function () {
   contentsPanel.style.transition = '0s';
   if (getPanelPosition(contentsPanel).left < 0) {
