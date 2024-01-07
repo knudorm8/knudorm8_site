@@ -43,8 +43,9 @@
 }
 
 .navigationPanel__navigationContainer__hamburger {
-  display: flex;
-  align-items: center;
+  position: absolute;
+  left: 32px;
+  top: calc(0.3 * var(--navPanel-height));
 }
 
 .navigationPanel__navigationContainer__hamburger__lineContainer {
@@ -98,6 +99,10 @@
   display: flex;
   flex-direction: column;
   row-gap: 40px;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__header {
+  padding-left: 50px;
 }
 
 .navigationPanel__navigationContainer__navigationMenu__dropdown {
