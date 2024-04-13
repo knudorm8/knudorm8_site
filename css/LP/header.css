@@ -5,6 +5,7 @@
 }
 
 .header__contentContainer {
+  margin: 0;
   width: 100%;
   display: flex;
   justify-content: flex-end;

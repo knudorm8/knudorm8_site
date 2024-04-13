@@ -1,7 +1,7 @@
 @media screen and (min-width: 789px) {
-  .contentContainer {
+  /*.contentContainer {
     row-gap: 170px;
-  }
+  }*/
   .header__textContainer {
     gap: 0;
   }
@@ -72,9 +72,9 @@
 }
 
 @media screen and (min-width: 1366px) {
-  .contentContainer {
+  /*.contentContainer {
     row-gap: 340px;
-  }
+  }*/
   .header__textContainer__logo {
     margin-bottom: -40px;
   }
@@ -119,9 +119,9 @@
   .main__contentContainer__textContainer__h2 {
     font-size: var(--font-size-h2-computer);
   }
-  .main--paddingBottom {
+  /*.main--paddingBottom {
     padding-bottom: 0;
-  }
+  }*/
   .main__contentContainer {
     max-width: 960px;
   }

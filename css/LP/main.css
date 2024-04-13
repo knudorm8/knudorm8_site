@@ -6,9 +6,10 @@
   align-items: center;
 }
 
+/*
 .main--paddingBottom {
   padding-bottom: 75px;
-}
+}*/
 
 .main__accented-blueBackgroundGradient {
   display: none;
@@ -24,6 +25,7 @@
   justify-content: center;
   align-items: center;
 }
+
 
 .main__contentContainer__img {
   width: 100%;
