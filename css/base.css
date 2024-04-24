@@ -70,3 +70,7 @@ body {
     text-decoration: underline;
   }
 }
+a{
+  color: var(--text-color);
+  font-weight: bold;
+}
