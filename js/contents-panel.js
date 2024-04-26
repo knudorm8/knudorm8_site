@@ -1,3 +1,4 @@
+
 let contentsPanel = document.getElementById('contentsPanel');
 
 function populate_contents() {
@@ -82,3 +83,5 @@ function scroll_toHeader(header) {
   document.getElementById(header).scrollIntoView();
   toggleContents();
 }
+
+

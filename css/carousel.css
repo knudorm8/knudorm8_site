@@ -1,0 +1,65 @@
+.carousel {
+  position: relative;
+  max-width: 398px;
+  padding: 10px 40px;
+  border: 1px solid #CCC;
+  border-radius: 15px;
+  background: #eee;
+}
+
+.carousel img {
+  width: 369px;
+  height: 700px;
+  /* робимо цей елемент блочним, щоб прибрати зайвий простір навколо картинок */
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  padding: 0;
+  background: #ddd;
+  border-radius: 15px;
+  border: 1px solid gray;
+  font-size: 24px;
+  line-height: 24px;
+  color: #444;
+  display: block;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.arrow:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+.prev {
+  left: 7px;
+}
+
+.next {
+  right: 7px;
+}
+
+.gallery {
+  max-width: 369px;
+  overflow: hidden;
+}
+
+.gallery ul {
+  height: 700px;
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: margin-left 250ms;
+  /* видаляємо порожній простір між елементами li, у яких встановлено inline-block*/
+  font-size: 0;
+}
+
+.gallery li {
+  display: inline-block;
+}
