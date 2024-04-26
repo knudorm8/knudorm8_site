@@ -123,11 +123,12 @@
 
 .navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph {
   display: block;
-  padding: 20px 10px;
   color: var(--text-color);
   text-decoration: none;
   background: var(--background-color);
   border-bottom: 1px solid var(--separator-color);
+  border-top: 1px solid var(--separator-color);
+  position: relative;
   & .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu {
     top: 0;
     left: 100%;
