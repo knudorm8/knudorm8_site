@@ -5,7 +5,7 @@
  *
  * @param articleName
  */
-function loadArticle(articleName = "info-about-dorm") {
+function loadArticle(articleName) {
   const articleElement = document.getElementById("article");
   const articlePath = "articles/" + articleName + ".html";
   articleElement.innerHTML = ""; // Clear the current content (if any)
@@ -36,8 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load content based on the URL hash fragment
   function handleHashChange() {
     const articleName = getArticleNameFromHash();
-    if (articleName.length === 0) loadArticle("guide");
-    loadArticle(articleName);
+    if (articleName.length === 0 || articleName === "") {
+      loadArticle("guide"); // or any other default article
+    } else {
+      loadArticle(articleName);
+    }
   }
 
   // Initial content loading based on the hash fragment
