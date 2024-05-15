@@ -5,7 +5,7 @@
  *
  * @param articleName
  */
-function loadArticle(articleName) {
+function loadArticle(articleName = "info-about-dorm") {
   const articleElement = document.getElementById("article");
   const articlePath = "articles/" + articleName + ".html";
   articleElement.innerHTML = ""; // Clear the current content (if any)
