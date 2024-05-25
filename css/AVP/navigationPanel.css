@@ -164,3 +164,20 @@
     display: flex;
   }
 }
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph__dropdownMenu {
+  display: flex;
+  align-items: center;
+  column-gap: 60px;
+}
+
+.arrow {
+  margin-top: -1px;
+  font-size: 1.7em;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph:hover .arrow {
+  transform: rotate(90deg);
+}
