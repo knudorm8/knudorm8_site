@@ -1,4 +1,58 @@
 @media screen and (min-width: 769px) {
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft {
+    padding-left: 0;
+  }
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__header {
+    font-size: initial;
+    font-weight: 600;
+  }
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu a:hover {
+    text-decoration: none;
+  }
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu {
+    /*Розмір*/
+    width: fit-content;
+    min-width: 250px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    /*Позиція*/
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+
+    /*Відображення*/
+    display: none;
+
+    /*Поведінка*/
+    user-select: none;
+
+    /*Позиціонування вмісту*/
+    flex-direction: column;
+    row-gap: 0;
+
+    /*Форматування*/
+    background: var(--background-color);
+    border: 1px solid var(--separator-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+
+    & a {
+      display: none;
+      padding: 20px 10px;
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    & a + a {
+      border-top: 1px solid var(--separator-color);
+    }
+
+    & a:hover {
+      background-color: var(--navigation-hover-color);
+    }
+  }
   .mainContentContainer {
     border-left: 1px solid var(--separator-color);
     border-right: 1px solid var(--separator-color);
@@ -19,9 +73,9 @@
     display: none;
   }
 
-    .navigationPanel__navigationContainer__popupWindow {
-        backdrop-filter: initial;
-    }
+  .navigationPanel__navigationContainer__popupWindow {
+    backdrop-filter: initial;
+  }
 
   .navigationPanel__navigationContainer__navigationMenu {
     flex: 1;
@@ -36,6 +90,86 @@
 
   .navigationPanel__navigationContainer__navigationMenu {
     width: 600px;
+  }
+  .arrow {
+    margin-top: -1px;
+    font-size: 1.7em;
+    display: inline-block;
+    transition: transform 0.4s ease;
+  }
+
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph:hover .arrow {
+    transform: rotate(90deg);
+  }
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    background: var(--background-color);
+    border-bottom: 1px solid var(--separator-color);
+    border-top: 1px solid var(--separator-color);
+    position: relative;
+    & .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu {
+      top: 0;
+      left: 100%;
+      & a {
+        display: none;
+        padding: 20px 10px;
+        color: var(--text-color);
+        text-decoration: none;
+      }
+    }
+
+  }
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph:hover {
+    background-color: var(--navigation-hover-color);
+  }
+
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu {
+    visibility: hidden;
+  }
+
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph:hover .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu {
+    visibility: visible;
+  }
+
+
+
+  .navigationPanel__navigationContainer__navigationMenu__dropdown:hover {
+    background-color: var(--navigation-hover-color);
+
+    .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu,
+    .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu a
+    {
+      display: flex;
+    }
+  }
+
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph__dropdownMenu {
+    display: flex;
+    align-items: center;
+    column-gap: 60px;
+  }
+  .navigationPanel__navigationContainer__navigationMenu__dropdown {
+    /*Розмір*/
+    height: 100%;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    /*Позиція*/
+    position: relative;
+
+    /*Відображення*/
+    display: flex;
+
+    /*Поведінка*/
+    user-select: none;
+
+    /*Позиціонування вмісту*/
+    align-items: center;
+    padding: 10px;
   }
 }
 
@@ -68,5 +202,4 @@
   .navigationPanel__navigationContainer {
     margin: 0 120px;
   }
-
 }
