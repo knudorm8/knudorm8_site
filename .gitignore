@@ -4,7 +4,6 @@
 node_modules
 dist
 .cache
-/articles/about-us.html
 /Макети/
 /.idea/vcs.xml
 /документація/
@@ -139,3 +138,4 @@ fabric.properties
 # Azure Toolkit for IntelliJ plugin
 # https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
 .idea/**/azureSettings.xml
+/.idea/inspectionProfiles/Project_Default.xml

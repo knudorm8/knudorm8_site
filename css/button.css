@@ -1,0 +1,33 @@
+.button {
+  /*Розмір*/
+  width: min-content;
+
+  /*Позиція*/
+
+  /*Відображення*/
+  display: flex;
+
+  /*Поведінка*/
+  user-select: none;
+
+  /*Позиціонування вмісту*/
+  padding: 10px 20px;
+  align-items: center;
+  text-align: center;
+
+  /*Форматування*/
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--background-color);
+  border: var(--text-color) solid 1px;
+  border-radius: 100px;
+
+  /*Ефекти*/
+  transition: background-color 0.4s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: var(--navigation-hover-color);
+}

@@ -1,21 +1,51 @@
-html {
-  min-height: 100%;
-  min-width: 100%;
-}
-
 * {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
 }
 
+html {
+  min-height: 100%;
+  min-width: 100%;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100svh;
   overflow: hidden;
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 4px;
+  border-radius: 100px;
+  padding: 2px;
+
+  &:hover {
+    background: var(--scrollbar-trackHover-color);
+  }
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+  border-radius: 100px;
+
+
+  /* Handle on hover */
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color);
+  }
+}
+
+::selection {
+  background: #cc0001;
+  color: white;
 }
 
 .mainContentContainer {
@@ -28,36 +58,27 @@ body {
 
 .list {
   padding-left: 20px;
+
+  & li {
+    margin-bottom: 10px;
+  }
 }
 
-.list li {
-  margin-bottom: 10px;
+.list--menu {
+  & li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
-
-/* width */
-::-webkit-scrollbar {
-  width: 3px;
-  height: 4px;
-  border-radius: 100px;
-  padding: 2px;
+a{
+  color: var(--text-color);
+  font-weight: bold;
 }
-
-/* Track */
-::-webkit-scrollbar-track:hover {
-  background: var(--scrollbar-trackHover-color);
+.attention
+{
+  font-weight: bold;
 }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb-color);
-  border-radius: 100px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-color);
-}
-
-::selection {
-  background: #cc0001;
+.content-panel-childList
+{
+  margin-left: 1em;
 }
