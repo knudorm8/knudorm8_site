@@ -1,4 +1,7 @@
 @media screen and (min-width: 769px) {
+  .navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow {
+    display: none;
+  }
   .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft {
     padding-left: 0;
   }
@@ -52,6 +55,9 @@
     & a:hover {
       background-color: var(--navigation-hover-color);
     }
+  }
+  .navigationPanel__navigationContainer__navigationMenu__dropdown:hover .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu {
+    row-gap: 0;
   }
   .mainContentContainer {
     border-left: 1px solid var(--separator-color);
