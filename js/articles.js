@@ -20,6 +20,7 @@ function loadArticle(articleName) {
     .then(data => {
       articleElement.innerHTML = data;
       populate_contents();
+      myCarousel();
     })
     .catch(error => {
       console.error("Error loading content:", error);
