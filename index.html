@@ -11,6 +11,13 @@
 <body>
 <nav class="navigationPanel">
   <div class="navigationPanel__navigationContainer">
+    <div class="navigationPanel__navigationContainer__hamburger">
+      <div class="navigationPanel__navigationContainer__hamburger__lineContainer" id="hamburger">
+        <span class="navigationPanel__navigationContainer__hamburger__lineContainer__line"></span>
+        <span class="navigationPanel__navigationContainer__hamburger__lineContainer__line"></span>
+        <span class="navigationPanel__navigationContainer__hamburger__lineContainer__line"></span>
+      </div>
+    </div>
     <svg class="navigationPanel__navigationContainer__logo"
          height="35.513905"
          id="svg1"
@@ -42,17 +49,24 @@
               />
             </g>
           </svg>
-    <div class="navigationPanel__navigationContainer__navigationMenu">
+    <div class="navigationPanel__navigationContainer__popupWindow" id="popup"></div>
+    <div class="navigationPanel__navigationContainer__navigationMenu" id="menu">
       <div class="navigationPanel__navigationContainer__navigationMenu__dropdown">
-        Новачкам
-        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer">
+          <p class="navigationPanel__navigationContainer__navigationMenu__dropdown__header">Новачкам</p>
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow">&#x25B9;</div>
+        </div>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft">
           <a href="#newcomer/info-about-dorm">Інформація про гуртожиток</a>
           <a href="#newcomer/questions">Часті запитання першокурсників</a>
         </div>
       </div>
       <div class="navigationPanel__navigationContainer__navigationMenu__dropdown">
-        Загальна інформація
-        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer">
+          <p class="navigationPanel__navigationContainer__navigationMenu__dropdown__header">Загальна інформація</p>
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow">&#x25B9;</div>
+        </div>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft">
           <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph">
             <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph__dropdownMenu">
               <a href="#about-dorm/about_dorm"> Про гуртожиток</a>
@@ -74,8 +88,11 @@
         </div>
       </div>
       <div class="navigationPanel__navigationContainer__navigationMenu__dropdown">
-        Самоврядування гуртожитку
-        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer">
+          <p class="navigationPanel__navigationContainer__navigationMenu__dropdown__header">Самоврядування гуртожитку</p>
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow">&#x25B9;</div>
+        </div>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft">
           <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph">
             <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph__dropdownMenu">
               <a href="#self-governance/about-us">Про Студентську раду гуртожитку</a>
@@ -94,8 +111,11 @@
         </div>
       </div>
       <div class="navigationPanel__navigationContainer__navigationMenu__dropdown">
-        Інструкції та настанови
-        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer">
+          <p class="navigationPanel__navigationContainer__navigationMenu__dropdown__header">Інструкції та настанови</p>
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow">&#x25B9;</div>
+        </div>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft">
           <a href="#guides/how-to-pay">Як платити</a>
           <a href="#guides/sanstan&fire">Санстан і пожежа</a>
           <a href="#guides/internal-resettlement">Внутрішнє переселення</a>
@@ -107,15 +127,17 @@
         </div>
       </div>
       <div class="navigationPanel__navigationContainer__navigationMenu__dropdown">
-        Часті запитання
-        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer">
+          <p class="navigationPanel__navigationContainer__navigationMenu__dropdown__header">Часті запитання</p>
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow">&#x25B9;</div>
+        </div>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft">
           <a href="#questions/debts">Запитання про борги</a>
           <a href="#questions/contract-payment">Пролонгація/оплата договору</a>
           <a href="#questions/friends-and-family-for-night">Як провести друзів до гуртожитку та залишити родичів на ночівлю?</a>
           <a href="#questions/call-carpenter-electrician-plumber">Як викликати столяра/електрика/сантехніка?</a>
           <a href="#questions/how-connect-internet">Як підключити інтернет у кімнаті?</a>
           <a href="#questions/recover-lost-pass">Як відновити втрачену перепустку?</a>
-
         </div>
       </div>
     </div>
@@ -132,5 +154,6 @@
 <script src="js/articles.js"></script>
 <script src="js/contents-panel.js"></script>
 <script src="js/panels.js"></script>
+<script src="js/hamburgerMenu.js"></script>
 </body>
 </html>
