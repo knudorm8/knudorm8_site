@@ -83,6 +83,7 @@
   display: flex;
   padding-top: 50px;
   z-index: 100;
+  -webkit-backdrop-filter: blur(13px);
   backdrop-filter: blur(13px);
   transition: 0.3s;
   /*overflow: auto;*/
