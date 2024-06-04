@@ -7,6 +7,7 @@
   }
   .navigationPanel__navigationContainer__navigationMenu__dropdown__header {
     font-size: initial;
+    text-align: center;
     font-weight: 600;
   }
   .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu a:hover {

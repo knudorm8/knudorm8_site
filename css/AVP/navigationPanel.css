@@ -114,6 +114,7 @@
   padding-left: 50px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   row-gap: 15px;
 }
 
