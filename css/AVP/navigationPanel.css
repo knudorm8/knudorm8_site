@@ -172,3 +172,13 @@
 .arrow {
   display: none;
 }
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu.open {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow.open {
+  transform: rotate(90deg);
+}
