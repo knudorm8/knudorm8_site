@@ -1,0 +1,184 @@
+:root {
+  --navPanel-height: 74px;
+}
+
+#logo-text {
+  fill: var(--text-color);
+}
+
+.navigationPanel {
+  /*Позиція*/
+  z-index: 100;
+
+  /*Відображення*/
+  display: flex;
+
+  /*Позиціонування вмісту*/
+  justify-content: center;
+
+  /*Форматування*/
+  font-size: 16px;
+  font-weight: 550;
+  background: var(--background-color);
+  border-bottom: 1px solid var(--separator-color);
+
+  /*Ефекти*/
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.navigationPanel__navigationContainer {
+  /*Розмір*/
+  height: var(--navPanel-height);
+
+  /*Відображення*/
+  display: flex;
+
+  /*Позиціонування вмісту*/
+  flex-direction: row;
+}
+
+.navigationPanel__navigationContainer__logo {
+  /*Позиція*/
+  align-self: center;
+  margin: 0 20px 0 10px;
+}
+
+.navigationPanel__navigationContainer__hamburger {
+  position: absolute;
+  left: 32px;
+  top: calc(0.3 * var(--navPanel-height));
+}
+
+.navigationPanel__navigationContainer__hamburger__lineContainer {
+  cursor: pointer;
+}
+
+.navigationPanel__navigationContainer__hamburger__lineContainer.active .navigationPanel__navigationContainer__hamburger__lineContainer__line:nth-child(2) {
+  opacity: 0;
+}
+
+.navigationPanel__navigationContainer__hamburger__lineContainer.active .navigationPanel__navigationContainer__hamburger__lineContainer__line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navigationPanel__navigationContainer__hamburger__lineContainer.active .navigationPanel__navigationContainer__hamburger__lineContainer__line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.navigationPanel__navigationContainer__hamburger__lineContainer__line {
+  width: 30px;
+  height: 3px;
+  margin: 6px auto;
+  display: block;
+  background-color: var(--hamburger-color);
+  transition: 0.2s;
+}
+
+.navigationPanel__navigationContainer__popupWindow {
+  width: 100%;
+  height: 110%;
+  position: fixed;
+  top: 75px;
+  left: -100%;
+  display: flex;
+  padding-top: 50px;
+  z-index: 100;
+  -webkit-backdrop-filter: blur(13px);
+  backdrop-filter: blur(13px);
+  transition: 0.3s;
+  /*overflow: auto;*/
+}
+
+.navigationPanel__navigationContainer__popupWindow.open {
+  left: 0;
+}
+
+.navigationPanel__navigationContainer__navigationMenu {
+  /*Розмір*/
+  flex: 1;
+
+  /*Відображення*/
+  display: none;
+
+  /*Позиціонування вмісту*/
+  flex-direction: row;
+}
+
+.navigationPanel__navigationContainer__navigationMenu.open {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 15px;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu {
+  display: none;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu a {
+  text-decoration: none;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu a:hover {
+  text-decoration: underline;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft {
+  /*display: none;*/
+  padding-left: 25px;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown:hover .navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow {
+  font-size: 1.7em;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown:hover .navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow {
+  transform: rotate(90deg);
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__header {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.arrow {
+  display: none;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu.open {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow.open {
+  transform: rotate(90deg);
+}
