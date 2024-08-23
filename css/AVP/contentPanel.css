@@ -33,6 +33,7 @@
   background: var(--contentsPanel-backgroundColor);
 
   /*Ефекти*/
+  -webkit-backdrop-filter: blur(13px);
   backdrop-filter: blur(13px);
   transition: left 0.2s;
 }

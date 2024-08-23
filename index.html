@@ -6,11 +6,19 @@
   <title>Студрада гуртожитку</title>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <link href="css/styles-index.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet">
 </head>
 
 <body>
 <nav class="navigationPanel">
   <div class="navigationPanel__navigationContainer">
+    <div class="navigationPanel__navigationContainer__hamburger">
+      <div class="navigationPanel__navigationContainer__hamburger__lineContainer" id="hamburger">
+        <span class="navigationPanel__navigationContainer__hamburger__lineContainer__line"></span>
+        <span class="navigationPanel__navigationContainer__hamburger__lineContainer__line"></span>
+        <span class="navigationPanel__navigationContainer__hamburger__lineContainer__line"></span>
+      </div>
+    </div>
     <svg class="navigationPanel__navigationContainer__logo"
          height="35.513905"
          id="svg1"
@@ -41,21 +49,31 @@
                 id="logo-text"
               />
             </g>
-          </svg>
-    <div class="navigationPanel__navigationContainer__navigationMenu">
+      </svg>
+    <div class="navigationPanel__navigationContainer__popupWindow" id="popup"></div>
+    <div class="navigationPanel__navigationContainer__navigationMenu" id="menu">
       <div class="navigationPanel__navigationContainer__navigationMenu__dropdown">
-        Новачкам
-        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer">
+          <p class="navigationPanel__navigationContainer__navigationMenu__dropdown__header">Новачкам</p>
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow">&#x25B9;</div>
+        </div>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft">
           <a href="#newcomer/info-about-dorm">Інформація про гуртожиток</a>
           <a href="#newcomer/questions">Часті запитання першокурсників</a>
           <a href="#newcomer/advice-to-freshmen">Поради першокурсникам</a>
         </div>
       </div>
       <div class="navigationPanel__navigationContainer__navigationMenu__dropdown">
-        Загальна інформація
-        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer">
+          <p class="navigationPanel__navigationContainer__navigationMenu__dropdown__header">Загальна інформація</p>
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow">&#x25B9;</div>
+        </div>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft">
           <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph">
-            <a href="#about-dorm/about_dorm"> Про гуртожиток</a>
+            <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph__dropdownMenu">
+              <a href="#about-dorm/about_dorm"> Про гуртожиток</a>
+              <div class="arrow">&#x25B9;</div>
+            </div>
             <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
               <a href="#about-dorm/administration-of-the-dormitory">Адміністрація гуртожитку</a>
               <a href="#about-dorm/gym">Спортзал</a>
@@ -72,16 +90,34 @@
         </div>
       </div>
       <div class="navigationPanel__navigationContainer__navigationMenu__dropdown">
-        Самоврядування гуртожитку
-        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
-          <a href="#self-governance/about-us">Про Студентську раду гуртожитку</a>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer">
+          <p class="navigationPanel__navigationContainer__navigationMenu__dropdown__header">Самоврядування гуртожитку</p>
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow">&#x25B9;</div>
+        </div>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft">
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph">
+            <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__subparagraph__dropdownMenu">
+              <a href="#self-governance/about-us">Про Студентську раду гуртожитку</a>
+              <div class="arrow">&#x25B9;</div>
+            </div>
+            <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
+              <a href="#self-governance/information-department">Інформаційний департамент</a>
+              <a href="#self-governance/department-of-cultural-work">Департамент з культурно-освітньої та спортивно-оздоровчої роботи</a>
+              <a href="#self-governance/technical-department">Департамент з питань технічного забезпечення</a>
+              <a href="#self-governance/department-of-sanitary-monitoring">Департамент з моніторингу санітарного стану кімнат та блоків гуртожитку</a>
+            </div>
+          </div>
+          <a href="#self-governance/docs">Документація</a>
           <a href="https://t.me/s/gurt8" target="_blank">Telegram канал гуртожитку</a>
           <a href="https://t.me/knudorm8_bot" target="_blank">Бот зворотного зв'язку</a>
         </div>
       </div>
       <div class="navigationPanel__navigationContainer__navigationMenu__dropdown">
-        Інструкції та настанови
-        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer">
+          <p class="navigationPanel__navigationContainer__navigationMenu__dropdown__header">Інструкції та настанови</p>
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow">&#x25B9;</div>
+        </div>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft">
           <a href="#guides/how-to-pay">Як платити</a>
           <a href="#guides/sanstan&fire">Санстан і пожежа</a>
           <a href="#guides/internal-resettlement">Внутрішнє переселення</a>
@@ -93,15 +129,17 @@
         </div>
       </div>
       <div class="navigationPanel__navigationContainer__navigationMenu__dropdown">
-        Часті запитання
-        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu">
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__headerContainer">
+          <p class="navigationPanel__navigationContainer__navigationMenu__dropdown__header">Часті запитання</p>
+          <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__header__arrow">&#x25B9;</div>
+        </div>
+        <div class="navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu navigationPanel__navigationContainer__navigationMenu__dropdown__dropdownMenu--paddingLeft">
           <a href="#questions/debts">Запитання про борги</a>
           <a href="#questions/contract-payment">Пролонгація/оплата договору</a>
           <a href="#questions/friends-and-family-for-night">Як провести друзів до гуртожитку та залишити родичів на ночівлю?</a>
           <a href="#questions/call-carpenter-electrician-plumber">Як викликати столяра/електрика/сантехніка?</a>
           <a href="#questions/how-connect-internet">Як підключити інтернет у кімнаті?</a>
           <a href="#questions/recover-lost-pass">Як відновити втрачену перепустку?</a>
-          
         </div>
       </div>
     </div>
@@ -115,8 +153,12 @@
   </button>
 </main>
 
+
 <script src="js/articles.js"></script>
 <script src="js/contents-panel.js"></script>
 <script src="js/panels.js"></script>
+<script src="js/hamburgerMenu.js"></script>
+<script src="js/slider.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </body>
 </html>

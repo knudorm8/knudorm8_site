@@ -13,7 +13,8 @@ function loadArticle(articleName) {
   fetch(articlePath)
     .then(response => {
       if (response.status === 404) {
-        return "<h1>Сторінки не існує</h1>" + "Нам дуже, дуже шкода 😔";
+        return "<h1>Сторінки не існує</h1>" + "Нам дуже, дуже шкода 😔" +
+          "<p>А поки можете погуляти <a href=\"#newcomer/info-about-dorm\">тут</a> </p>";
       }
       return response.text();
     })

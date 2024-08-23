@@ -1,3 +1,59 @@
+<style>
+  .contentContainer {
+    display: flex;
+  }
+  .swiperContainer {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .swiper{
+    width: 365px;
+    height: 600px;
+    margin: 0;
+    border-radius: 20px;
+  }
+  .swiper-height {
+    height: 635px;
+  }
+  .swiper-wrapper {
+    border-radius: 10px;
+  }
+  .swiper-slide{
+    text-align: center;
+    font-size: 18px;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide img{
+    width: 100%;
+    object-fit: cover;
+  }
+  .prev-btn, .next-btn {
+    margin: 10px;
+    transform: translateY(-50%);
+    background-color: var(--background-color);
+    color: var(--slider-button);
+    border: none;
+    padding: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .img-border {
+    border-radius: 20px;
+    margin-right: 20px;
+  }
+  @media screen and (max-width: 1366px) {
+    .contentContainer {
+      flex-direction: column;
+    }
+  }
+</style>
+
 <h1>Інструкція з оплати за гуртожиток</h1>
 <p>Гроші — це складно. Платити буває теж. Але платити потрібно, тому ми вирішили написати для тебе інструкцію, щоб було простіше.</p>
 <p>Ще в нас є <a href="#questions/debts">відповіді на запитання про борги.</a></p>
@@ -23,50 +79,85 @@
   <li>Код ЄДРПОУ 02070944</li>
   <li>ІПН 020709426</li>
 </ul>
-<h3>Як платити через Приват24 за проживання</h3>
 
-<ol class="list">
-  <li>Заходимо в особистий кабінет Приват24.</li>
-  <li>Обираємо розділ "Сервіси" та категорію "Платежі".</li>
-  <li>Шукаємо наш університет за назвою, ЄДРПОУ або IBAN.</li>
-  <li>Обираємо "Житлово-комунальні та інші послуги".</li>
-  <li>
-    Заповнюємо платіжку відповідно до шаблону:
+<div class="contentContainer">
+  <div>
+
+    <h3>Як платити через Приват24 за проживання</h3>
     <ol class="list">
-      <li>Вказуємо повністю ПІБ;</li>
-      <li>Обираємо послугу «31~Студмістечко проживання без ПДВ (студенти)»;</li>
-      <li>Вказуємо номер гуртожитку та кімнати (у форматі xxx/x);</li>
-      <li>Дописуємо у призначення «Номер договору №______»;</li>
-      <li>Вписуємо необхідну суму оплати за проживання.</li>
+      <li>Заходимо в особистий кабінет Приват24.</li>
+      <li>Обираємо розділ "Сервіси" та категорію "Платежі".</li>
+      <li>Шукаємо наш університет за назвою, ЄДРПОУ або IBAN.</li>
+      <li>Обираємо "Житлово-комунальні та інші послуги".</li>
+      <li>
+        Заповнюємо платіжку відповідно до шаблону:
+        <ol class="list">
+          <li>Вказуємо повністю ПІБ;</li>
+          <li>Обираємо послугу «31~Студмістечко проживання без ПДВ (студенти)»;</li>
+          <li>Вказуємо номер гуртожитку та кімнати (у форматі xxx/x);</li>
+          <li>Дописуємо у призначення «Номер договору №______»;</li>
+          <li>Вписуємо необхідну суму оплати за проживання.</li>
+        </ol>
+      </li>
+      <li>Перевіряємо інформацію, тоді натискаємо кнопку «Продовжити» та оплачуємо.</li>
+      <li>Зберігаємо квитанцію про оплату.</li>
     </ol>
-  </li>
-  <li>Перевіряємо інформацію, тоді натискаємо кнопку «Продовжити» та оплачуємо.</li>
-  <li>Зберігаємо квитанцію про оплату.</li>
-</ol>
-<p>*Скріншоти можна гортати стрілочками.</p>
-<!-- Добавити карусель -->
+    <p>*Скріншоти можна гортати стрілочками.</p>
+  </div>
 
-<h3>Як платити через Монобанк за проживання</h3>
-<ol class="list">
-  <li>Заходимо в додаток монобанку.</li>
-  <li>Обираємо розділ "Інші платежі".</li>
-  <li>Натискаємо "Платіж за IBAN" та вводимо реквізити: UA898201720313231002202014095.</li>
-  <li>Обираємо "КНУ імені Тараса Шевченка".</li>
-  <li>Шукаємо пункт "За проживання у гуртожитках "Студмістечко" .</li>
-  <li>
-    Заповнюємо платіжку відповідно до шаблону:
+  <div class="swiperContainer">
+    <button class="prev-btn">&#10094;</button>
+    <div class="swiper newSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../../img/AVP/how-to-pay/Privat24-for-living-in-knudorm8/privatL1.png" alt="Як платити через Приват24 за проживання"></div>
+        <div class="swiper-slide"><img src="../../img/AVP/how-to-pay/Privat24-for-living-in-knudorm8/privatL2.png" alt="Як платити через Приват24 за проживання"></div>
+        <div class="swiper-slide"><img src="../../img/AVP/how-to-pay/Privat24-for-living-in-knudorm8/privatL3.png" alt="Як платити через Приват24 за проживання"></div>
+        <div class="swiper-slide"><img src="../../img/AVP/how-to-pay/Privat24-for-living-in-knudorm8/privatL4.png" alt="Як платити через Приват24 за проживання"></div>
+        <div class="swiper-slide"><img src="../../img/AVP/how-to-pay/Privat24-for-living-in-knudorm8/privatL5.png" alt="Як платити через Приват24 за проживання"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <button class="next-btn">&#10095;</button>
+  </div>
+</div>
+
+<div class="contentContainer">
+  <div>
+    <h3>Як платити через Монобанк за проживання</h3>
     <ol class="list">
-      <li>Вказуємо повністю ПІБ;</li>
-      <li>Вписуємо номер гуртожитку та кімнати (у форматі xxx/x);</li>
-      <li>Вказуємо номер договору/перепустки №______»;</li>
+      <li>Заходимо в додаток монобанку.</li>
+      <li>Обираємо розділ "Інші платежі".</li>
+      <li>Натискаємо "Платіж за IBAN" та вводимо реквізити: UA898201720313231002202014095.</li>
+      <li>Обираємо "КНУ імені Тараса Шевченка".</li>
+      <li>Шукаємо пункт "За проживання у гуртожитках "Студмістечко" .</li>
+      <li>
+        Заповнюємо платіжку відповідно до шаблону:
+        <ol class="list">
+          <li>Вказуємо повністю ПІБ;</li>
+          <li>Вписуємо номер гуртожитку та кімнати (у форматі xxx/x);</li>
+          <li>Вказуємо номер договору/перепустки №______»;</li>
+        </ol>
+      </li>
+      <li>Перевіряємо інформацію, тоді натискаємо кнопку «Далі», вводиму необхідну суму та оплачуємо.</li>
+      <li>Зберігаємо квитанцію про оплату.</li>
     </ol>
-  </li>
-  <li>Перевіряємо інформацію, тоді натискаємо кнопку «Далі», вводиму необхідну суму та оплачуємо.</li>
-  <li>Зберігаємо квитанцію про оплату.</li>
-</ol>
-<p>*Скріншоти можна гортати стрілочками.</p>
-
-<!-- Добавити карусель -->
+    <p>*Скріншоти можна гортати стрілочками.</p>
+  </div>
+  <div class="swiperContainer">
+    <button class="prev-btn">&#10094;</button>
+    <div class="swiper newSwiper swiper-height">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img class="img-border" src="../../img/AVP/how-to-pay/Monobank-for-living-in-knudorm8/monoL1.jpg" alt="Як платити через Монобанк за проживання"></div>
+        <div class="swiper-slide"><img class="img-border" src="../../img/AVP/how-to-pay/Monobank-for-living-in-knudorm8/monoL2.jpg" alt="Як платити через Монобанк за проживання"></div>
+        <div class="swiper-slide"><img class="img-border" src="../../img/AVP/how-to-pay/Monobank-for-living-in-knudorm8/monoL3.jpg" alt="Як платити через Монобанк за проживання"></div>
+        <div class="swiper-slide"><img class="img-border" src="../../img/AVP/how-to-pay/Monobank-for-living-in-knudorm8/monoL4.jpg" alt="Як платити через Монобанк за проживання"></div>
+        <div class="swiper-slide"><img class="img-border" src="../../img/AVP/how-to-pay/Monobank-for-living-in-knudorm8/monoL5.jpg" alt="Як платити через Монобанк за проживання"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <button class="next-btn">&#10095;</button>
+  </div>
+</div>
 
 <h2>Оплата за електроенергію</h2>
 <h3>Скільки сплачувати</h3>
@@ -88,47 +179,81 @@
   <li>Код ЄДРПОУ 02070944</li>
   <li>ІПН 020709426</li>
 </ul>
+<div class="contentContainer">
+  <div>
+    <h3>Як платити через Приват24 за електроенергію</h3>
+    <ol class="list">
+      <li>Заходимо в особистий кабінет Приват24.</li>
+      <li>Обираємо розділ «Сервіси» та категорію «Платежі».</li>
+      <li>Шукаємо наш університет за назвою, ЄДРПОУ або IBAN.</li>
+      <li>Обираємо «Житлово-комунальні та інші послуги відшкодування».</li>
+      <li>
+        Заповнюємо платіжку відповідно до шаблону:
+        <ol class="list">
+          <li>ПІБ, повністю;</li>
+          <li>Послуга «41~Відшкодування електроенергії з гуртожитків»;</li>
+          <li>Сума електроенергії з платіжки або сума, яку хочемо оплатити;</li>
+          <li>Свій ідентифікаційний код (10 цифр);</li>
+          <li>Номер картки, тобто номер договору або перепустки;</li>
+          <li>ПІБ платника у форматі «Прізвище І.Б.»;</li>
+          <li>Дописуємо у призначення: «Гуртожиток №8, кімната xxx/x, договір №______».</li>
+        </ol>
+      </li>
+      <li>Перевіряємо інформацію, тоді натискаємо кнопку «Продовжити» та оплачуємо.</li>
+      <li>Зберігаємо квитанцію про оплату.</li>
+    </ol>
+    <p>*Скріншоти можна гортати стрілочками.</p>
+  </div>
+  <div class="swiperContainer">
+    <button class="prev-btn">&#10094;</button>
+    <div class="swiper newSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../../img/AVP/how-to-pay/Privat24-for-electricity-in-knudorm8/privatElec1.png" alt="Як платити через Приват24 за електроенергію"></div>
+        <div class="swiper-slide"><img src="../../img/AVP/how-to-pay/Privat24-for-electricity-in-knudorm8/privatElec2.png" alt="Як платити через Приват24 за електроенергію"></div>
+        <div class="swiper-slide"><img src="../../img/AVP/how-to-pay/Privat24-for-electricity-in-knudorm8/privatElec3.png" alt="Як платити через Приват24 за електроенергію"></div>
+        <div class="swiper-slide"><img src="../../img/AVP/how-to-pay/Privat24-for-electricity-in-knudorm8/privatElec4.png" alt="Як платити через Приват24 за електроенергію"></div>
+        <div class="swiper-slide"><img src="../../img/AVP/how-to-pay/Privat24-for-electricity-in-knudorm8/privatElec5.png" alt="Як платити через Приват24 за електроенергію"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <button class="next-btn">&#10095;</button>
+  </div>
+</div>
 
-<h3>Як платити через Приват24 за електроенергію</h3>
-<ol class="list">
-  <li>Заходимо в особистий кабінет Приват24.</li>
-  <li>Обираємо розділ «Сервіси» та категорію «Платежі».</li>
-  <li>Шукаємо наш університет за назвою, ЄДРПОУ або IBAN.</li>
-  <li>Обираємо «Житлово-комунальні та інші послуги відшкодування».</li>
-  <li>
-    Заповнюємо платіжку відповідно до шаблону:
+<div class="contentContainer">
+  <div>
+    <h3>Як платити через Монобанк за електроенергію</h3>
     <ol class="list">
-      <li>ПІБ, повністю;</li>
-      <li>Послуга «41~Відшкодування електроенергії з гуртожитків»;</li>
-      <li>Сума електроенергії з платіжки або сума, яку хочемо оплатити;</li>
-      <li>Свій ідентифікаційний код (10 цифр);</li>
-      <li>Номер картки, тобто номер договору або перепустки;</li>
-      <li>ПІБ платника у форматі «Прізвище І.Б.»;</li>
-      <li>Дописуємо у призначення: «Гуртожиток №8, кімната xxx/x, договір №______».</li>
+      <li>Заходимо в додаток монобанку.</li>
+      <li>Обираємо розділ "Інші платежі".</li>
+      <li>Натискаємо "Платіж за IBAN" та вводимо реквізити: UA898201720313231002202014095.</li>
+      <li>Обираємо "КНУ імені Тараса Шевченка".</li>
+      <li>Шукаємо пункт "Електроенергія (гуртожиток)" .</li>
+      <li>
+        Заповнюємо платіжку відповідно до шаблону:
+        <ol class="list">
+          <li>Вказуємо номер договору/перепустки №______»;</li>
+          <li>Вписуємо у поле "Група" номер гуртожитку та кімнати (у форматі xxx/x);</li>
+          <li>Вказуємо повністю ПІБ;</li>
+        </ol>
+      </li>
+      <li>Перевіряємо інформацію, тоді натискаємо кнопку «Далі», вводиму необхідну суму та оплачуємо.</li>
+      <li>Зберігаємо квитанцію про оплату.</li>
     </ol>
-  </li>
-  <li>Перевіряємо інформацію, тоді натискаємо кнопку «Продовжити» та оплачуємо.</li>
-  <li>Зберігаємо квитанцію про оплату.</li>
-</ol>
-<p>*Скріншоти можна гортати стрілочками.</p>
-<!-- Добавити карусель -->
-<h3>Як платити через Монобанк за електроенергію</h3>
-<ol class="list">
-  <li>Заходимо в додаток монобанку.</li>
-  <li>Обираємо розділ "Інші платежі".</li>
-  <li>Натискаємо "Платіж за IBAN" та вводимо реквізити: UA898201720313231002202014095.</li>
-  <li>Обираємо "КНУ імені Тараса Шевченка".</li>
-  <li>Шукаємо пункт "Електроенергія (гуртожиток)" .</li>
-  <li>
-    Заповнюємо платіжку відповідно до шаблону:
-    <ol class="list">
-      <li>Вказуємо номер договору/перепустки №______»;</li>
-      <li>Вписуємо у поле "Група" номер гуртожитку та кімнати (у форматі xxx/x);</li>
-      <li>Вказуємо повністю ПІБ;</li>
-    </ol>
-  </li>
-  <li>Перевіряємо інформацію, тоді натискаємо кнопку «Далі», вводиму необхідну суму та оплачуємо.</li>
-  <li>Зберігаємо квитанцію про оплату.</li>
-</ol>
-<p>*Скріншоти можна гортати стрілочками.</p>
-<!-- Добавити карусель -->
+    <p>*Скріншоти можна гортати стрілочками.</p>
+  </div>
+  <div class="swiperContainer">
+    <button class="prev-btn">&#10094;</button>
+    <div class="swiper newSwiper swiper-height">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img class="img-border" src="../../img/AVP/how-to-pay/Monobank-for-electricity-in-knudorm8/monoElec1.jpg" alt="Як платити через Монобанк за електроенергію"></div>
+        <div class="swiper-slide"><img class="img-border" src="../../img/AVP/how-to-pay/Monobank-for-electricity-in-knudorm8/monoElec2.jpg" alt="Як платити через Монобанк за електроенергію"></div>
+        <div class="swiper-slide"><img class="img-border" src="../../img/AVP/how-to-pay/Monobank-for-electricity-in-knudorm8/monoElec3.jpg" alt="Як платити через Монобанк за електроенергію"></div>
+        <div class="swiper-slide"><img class="img-border" src="../../img/AVP/how-to-pay/Monobank-for-electricity-in-knudorm8/monoElec4.jpg" alt="Як платити через Монобанк за електроенергію"></div>
+        <div class="swiper-slide"><img class="img-border" src="../../img/AVP/how-to-pay/Monobank-for-electricity-in-knudorm8/monoElec5.jpg" alt="Як платити через Монобанк за електроенергію"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <button class="next-btn">&#10095;</button>
+  </div>
+</div>
