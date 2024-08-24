@@ -9,13 +9,13 @@
     justify-content: space-between;
   }
   .swiper{
-    width: 365px;
-    height: 600px;
     margin: 0;
     border-radius: 20px;
+    padding-bottom: 25px;
   }
   .swiper-height {
-    height: 635px;
+    padding-bottom: 35px;
+
   }
   .swiper-wrapper {
     border-radius: 10px;
@@ -27,6 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
   .swiper-slide img{
     width: 100%;
@@ -45,12 +46,26 @@
   }
   .img-border {
     border-radius: 20px;
-    margin-right: 20px;
   }
+  
+
   @media screen and (max-width: 1366px) {
     .contentContainer {
       flex-direction: column;
     }
+    
+  }
+
+  @media screen and (max-width: 660px) {
+    .swiperContainer{
+      margin: 0 auto;
+    }
+    .swiperContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   }
 </style>
 
@@ -107,7 +122,7 @@
 
   <div class="swiperContainer">
     <button class="prev-btn">&#10094;</button>
-    <div class="swiper newSwiper">
+    <div class="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="https://firebasestorage.googleapis.com/v0/b/gurtak8photos.appspot.com/o/privatL1.png?alt=media&token=42b86a86-8d69-43a1-a18a-41b39ade0c74" alt="Як платити через Приват24 за проживання"></div>
         <div class="swiper-slide"><img src="https://firebasestorage.googleapis.com/v0/b/gurtak8photos.appspot.com/o/privatL2.png?alt=media&token=be229b5d-c1a8-4875-92fc-671ca7e2930e" alt="Як платити через Приват24 за проживання"></div>
@@ -145,7 +160,7 @@
   </div>
   <div class="swiperContainer">
     <button class="prev-btn">&#10094;</button>
-    <div class="swiper newSwiper swiper-height">
+    <div class="swiper swiper-height">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img class="img-border" src="https://firebasestorage.googleapis.com/v0/b/gurtak8photos.appspot.com/o/monoL1.jpg?alt=media&token=2869e04e-c550-43bb-b431-fb96ed6905c5" alt="Як платити через Монобанк за проживання"></div>
         <div class="swiper-slide"><img class="img-border" src="https://firebasestorage.googleapis.com/v0/b/gurtak8photos.appspot.com/o/monoL2.jpg?alt=media&token=e56383e3-bbae-44cc-a804-bd4137fca3b2" alt="Як платити через Монобанк за проживання"></div>
@@ -206,7 +221,7 @@
   </div>
   <div class="swiperContainer">
     <button class="prev-btn">&#10094;</button>
-    <div class="swiper newSwiper">
+    <div class="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="https://firebasestorage.googleapis.com/v0/b/gurtak8photos.appspot.com/o/privatElec1.png?alt=media&token=2ce13c60-695b-49bd-bad4-c5b43fd5bb13" alt="Як платити через Приват24 за електроенергію"></div>
         <div class="swiper-slide"><img src="https://firebasestorage.googleapis.com/v0/b/gurtak8photos.appspot.com/o/privatElec2.png?alt=media&token=42fc9e9c-b718-4759-96d4-1e5d8cd95b65" alt="Як платити через Приват24 за електроенергію"></div>
@@ -244,7 +259,7 @@
   </div>
   <div class="swiperContainer">
     <button class="prev-btn">&#10094;</button>
-    <div class="swiper newSwiper swiper-height">
+    <div class="swiper swiper-height">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img class="img-border" src="https://firebasestorage.googleapis.com/v0/b/gurtak8photos.appspot.com/o/monoElec1.jpg?alt=media&token=47d1ea37-706e-40ff-b4e3-b267c82ba007" alt="Як платити через Монобанк за електроенергію"></div>
         <div class="swiper-slide"><img class="img-border" src="https://firebasestorage.googleapis.com/v0/b/gurtak8photos.appspot.com/o/monoElec2.jpg?alt=media&token=2e55c0e5-397e-45a4-83e9-2aec36b15b1c" alt="Як платити через Монобанк за електроенергію"></div>
