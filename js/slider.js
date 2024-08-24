@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.location.hash === '#guides/how-to-pay') {
       setTimeout(function() {
         document.querySelectorAll('.swiperContainer').forEach((container, index) => {
-          const swiper = new Swiper(container.querySelector('.newSwiper'), {
+          const swiper = new Swiper(container.querySelector('.swiper'), {
             navigation: {
               nextEl: container.querySelector('.next-btn'),
               prevEl: container.querySelector('.prev-btn'),
