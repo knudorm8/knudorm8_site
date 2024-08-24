@@ -12,7 +12,7 @@ function populate_contents() {
   let headerList = document.createElement('ul');
   headerList.className = 'list list--menu';
 
-  let currentH2; 
+  let currentH2;
   let childListCounter = 0;
 
   Array.from(headers).forEach((header, i) => {
